@@ -1,7 +1,8 @@
 //
 import org.gradle.api.artifacts.*
 
-apply plugin: 'base' // To add "clean" task to the root project.
+apply plugin:'base' // To add "clean" task to the root project.
+apply plugin:'maven'
 
 subprojects {
   apply from:rootProject.file('common.gradle')
@@ -26,8 +27,8 @@ task wrapper(type:Wrapper, description:'Creates and deploys the Gradle wrapper t
 
 uploadArchives {
   repositories {
-    ivy {
-      url "../BeyondRM.github.io/repository/platform"
+    mavenDeployer {
+      repository(url:"file:../BeyondRM.github.io/repository/platform/")
     }
   }
 }
