@@ -3,6 +3,10 @@ import org.gradle.api.artifacts.*
 
 apply plugin:'base' // To add "clean" task to the root project.
 apply plugin:'maven'
+apply plugin:'maven-publish'
+
+group = 'beyondrm.platform'
+version = '0.1'
 
 subprojects {
   apply from:rootProject.file('common.gradle')
@@ -25,10 +29,10 @@ task wrapper(type:Wrapper, description:'Creates and deploys the Gradle wrapper t
   gradleVersion = '2.2.1'
 }
 
-uploadArchives {
-  repositories {
-    mavenDeployer {
-      repository(url:"file:../BeyondRM.github.io/repository/platform/")
-    }
-  }
-}
+//uploadArchives {
+//  repositories {
+//    flatDir{
+//      dirs '../BeyondRM.github.io/repository/beyondrm/platform'
+//    }
+//  }
+//}

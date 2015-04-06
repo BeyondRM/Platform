@@ -9,10 +9,6 @@ sourceCompatibility = '1.8'
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
 repositories {
-  maven {
-    url '../repository/beyondrm/platform'
-  }
-  mavenCentral();
   // You may define additional repositories, or even remove "mavenCentral()". Read more about repositories here:
   //   http://www.gradle.org/docs/current/userguide/dependency_management.html#sec:repositories
 }
@@ -50,6 +46,19 @@ task createFolders(description: 'Creates the source folders if they do not exist
     if (!srcDir.isDirectory()) {
       println "Creating source folder: ${srcDir}"
       srcDir.mkdirs()
+    }
+  }
+}
+
+publishing {
+  publications {
+    mavenJava(MavenPublication) {
+      from components.java
+    }
+  }
+  repositories {
+    maven {
+      url "../BeyondRM.github.io/repository/beyondrm/platform"
     }
   }
 }
