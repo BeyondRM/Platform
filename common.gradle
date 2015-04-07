@@ -2,20 +2,22 @@
 apply plugin: 'java'
 apply plugin: 'maven'
 
-String mavenGroupId = 'brm.platform'
-String mavenVersion = '0.1.0-SNAPSHOT'
+String mavenGroupId = 'beyondrm.platform'
+String mavenVersion = '0.1'
 
 sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
 repositories {
-  // You may define additional repositories, or even remove "mavenCentral()". Read more about repositories here:
-  //   http://www.gradle.org/docs/current/userguide/dependency_management.html#sec:repositories
+  //  http://www.gradle.org/docs/current/userguide/dependency_management.html#sec:repositories
+  mavenLocal()
+  mavenCentral()
 }
 
 dependencies {
   // Adding dependencies here will add the dependencies to each subproject.
-  testCompile group: 'junit', name: 'junit', version: '4.10'
+  testCompile 'junit:junit:4.10'
 }
 
 String mavenArtifactId = name
@@ -46,19 +48,6 @@ task createFolders(description: 'Creates the source folders if they do not exist
     if (!srcDir.isDirectory()) {
       println "Creating source folder: ${srcDir}"
       srcDir.mkdirs()
-    }
-  }
-}
-
-publishing {
-  publications {
-    mavenJava(MavenPublication) {
-      from components.java
-    }
-  }
-  repositories {
-    maven {
-      url "../BeyondRM.github.io/repository/beyondrm/platform"
     }
   }
 }
