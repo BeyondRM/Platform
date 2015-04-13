@@ -6,5 +6,5 @@ instances that are utilizable for any and every other module in the module-hiera
 "foundation" that a building is constructed upon; it provides supporting structural methodologies, used in defining any
 other module's implementations.
 
-  One particular aspect, is my "logging support" core singleton class. It pushes all logging to Java's default logging
-system; however, it may also output a log-file.
+  One particular aspect, is my "logging support" core singleton class. It pushes all logging to Java's default "logging
+system"; however, it may also output a log-file.
