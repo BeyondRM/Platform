@@ -36,6 +36,13 @@ public class Defaults {
     return calendar;
   }
 
+  public final boolean isFinishDateTime() {
+    // This method examines passed in parameters to see whether the current date and time is after the finish date and
+    // time for the current game instance. This method is called once per game tick, and should only ever return true
+    // if all current date values and all current time values would be greater than the default ending time.
+    return false;
+  }
+
   public final void initialize(File f) {
     file = f;
     // if 'file' is a valid compressed volume thaat contains our binary calendar and clock values, get the subfiles....

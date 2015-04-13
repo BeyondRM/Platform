@@ -26,6 +26,14 @@ public class PlatformChronology {
   private final List<String> timelock;
   private CalendarDefinition calendarDefinition;
 
+  protected int currentDateYear;
+  protected int currentDateMonth;
+  protected int currentDateDay;
+  protected int currentDateWeekday;
+  protected int currentTimeHour;
+  protected int currentTimeMin;
+  protected int currentTimeSec;
+
   {
     timelock = new ArrayList<>(8);
   }
