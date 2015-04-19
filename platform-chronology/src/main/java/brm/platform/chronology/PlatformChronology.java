@@ -1,5 +1,9 @@
 package brm.platform.chronology;
+import abc.cryptology.AbcCryptology;
+import brm.platform.architecture.loadable.AModuleLoading;
+import brm.platform.architecture.loadable.progress.ProgressBar;
 import brm.platform.chronology.calendar.CalendarDefinition;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +17,7 @@ import java.util.List;
  * @see #instance instance
  * @see #PlatformChronology PlatformChronology
  */
-public class PlatformChronology {
+public class PlatformChronology extends AModuleLoading {
   /**
    * The default {@link PlatformChronology} instance.
    */
@@ -39,6 +43,53 @@ public class PlatformChronology {
   }
 
   private PlatformChronology() {
+  }
+
+  @Override
+  public boolean isDataLoaded() {
+    return dataLoaded;
+  }
+
+  @Override
+  public boolean isDataValidated() {
+    return dataValidated;
+  }
+
+  @Override
+  public int getInitializedCount() {
+    return initializedCount;
+  }
+
+  @Override
+  public void beforeInitialization(long l, File f, String s) {
+    sourcePath = f;
+  }
+
+  @Override
+  public void initializeBefore(ProgressBar pb) {
+    if(!dataLoaded && !dataValidated && sourcePath != null && sourcePath.exists()) {
+      AbcCryptology.instance.performDecryption(currentDateDay,
+                                               new LogicChronologyDefaults(),
+                                               null,
+                                               sourcePath,
+                                               null);
+    }
+  }
+
+  @Override
+  public void initializeDuring(ProgressBar pb) {
+  }
+
+  @Override
+  public void initializeFinish(ProgressBar pb) {
+  }
+
+  @Override
+  public void validation() {
+  }
+
+  public boolean isTimelock() {
+    return !timelock.isEmpty();
   }
 
   public void addTimelock(String s) {

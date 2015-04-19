@@ -1,5 +1,5 @@
 package brm.platform.species;
-import brm.platform.architecture.loadable.IPlatformLoading;
+import brm.platform.architecture.loadable.AModuleLoading;
 import brm.platform.architecture.loadable.progress.ProgressBar;
 import java.io.File;
 
@@ -11,7 +11,7 @@ import java.io.File;
  * @see #instance instance
  * @see #PlatformSpecies PlatformSpecies
  */
-public class PlatformSpecies extends IPlatformLoading {
+public class PlatformSpecies extends AModuleLoading {
   /**
    * The default {@link PlatformSpecies} instance.
    */
@@ -40,7 +40,7 @@ public class PlatformSpecies extends IPlatformLoading {
   }
 
   @Override
-  public void beforeInitialization(File f) {
+  public void beforeInitialization(long l, File f, String s) {
   }
 
   @Override

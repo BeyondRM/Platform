@@ -8,7 +8,7 @@ import brm.platform.window.skinning.skin.SkinnableContainer;
  * The Window Skin manager. This singleton class contains fields and methods for handling all the skinning graphics and
  * properties for the system.
  * <p/>
- * TODO: Implement IPlatformLoading; fill out the methods to initialize this instance, then load the skinnable objects.
+ * TODO: Implement AModuleLoading; fill out the methods to initialize this instance, then load the skinnable objects.
  * In the initializer method, we want to obtain the compressed archive containing the window-skin definitions; they can
  * be parsed as they are loaded. This class should handle any IOException thrown from the ASkinnable class constructor;
  * if no valid window skins exist after loading of this module is complete, then we will error-out of the whole running
@@ -18,7 +18,7 @@ import brm.platform.window.skinning.skin.SkinnableContainer;
  * @see #skinnableComponents skinnableComponents
  * @see #skinnableContainers skinnableContainers
  */
-public class WindowSkin { // implements IPlatformLoading
+public class WindowSkin { // implements AModuleLoading
   /**
    * The default {@link WindowSkin} instance.
    * @see WindowSkin
