@@ -1,4 +1,4 @@
 //
 dependencies {
-  compile 'beyondrm.platform:platform-architecture:0.1'
+  compile project(':platform-architecture')
 }

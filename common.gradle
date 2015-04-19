@@ -19,7 +19,6 @@ dependencies {
   // Adding dependencies here will add the dependencies to each subproject.
   compile 'abc.core:abc-cryptology:0.1'
   compile 'abc.core:abc-errorlogs:0.1'
-  compile 'beyondrm.platform:platform-architecture:0.1'
   testCompile 'junit:junit:4.10'
 }
 
