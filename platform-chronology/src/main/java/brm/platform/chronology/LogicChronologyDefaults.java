@@ -1,5 +1,6 @@
 package brm.platform.chronology;
 import abc.cryptology.logics.ACryptoLogic;
+import brm.platform.architecture.PlatformArchitecture;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -51,6 +52,22 @@ class LogicChronologyDefaults extends ACryptoLogic {
 
   @Override
   public void performEncryption(DataOutputStream dos) throws IOException {
-    // nothing done here; defaults are not written...
+    if(PlatformArchitecture.mode.devOnly) {
+      dos.writeShort(dateBeginYear);
+      dos.writeByte(dateBeginMonth);
+      dos.writeByte(dateBeginDay);
+      dos.writeByte(dateBeginWeekday);
+      dos.writeShort(dateEndYear);
+      dos.writeByte(dateEndMonth);
+      dos.writeByte(dateEndDay);
+      dos.writeByte(dateEndWeekday);
+
+      dos.writeByte(timeBeginHour);
+      dos.writeByte(timeBeginMinute);
+      dos.writeByte(timeBeginSecond);
+      dos.writeByte(timeEndHour);
+      dos.writeByte(timeEndMinute);
+      dos.writeByte(timeEndSecond);
+    }
   }
 }
