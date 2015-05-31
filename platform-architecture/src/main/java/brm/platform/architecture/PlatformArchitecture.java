@@ -3,7 +3,7 @@ import brm.platform.architecture.enumtype.OperatorMode;
 
 
 /**
- * <h2>PlatformArchitecture</h2>
+ * Platform Architecture. This singleton class provides an entry point for the entire platform and its modules.
  * @author Gregory
  * @see #instance instance
  * @see #mode mode

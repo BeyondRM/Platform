@@ -9,7 +9,6 @@ import java.util.List;
 
 
 /**
- * <h2>PlatformChronology</h2>
  * The singleton platform chronology instance. This static class is used to contain default chronological definitions a
  * game may depend upon. This allows setting the speed at which time passes in a game, such as while not paused from in
  * a menu state, a cutscene, or an event.

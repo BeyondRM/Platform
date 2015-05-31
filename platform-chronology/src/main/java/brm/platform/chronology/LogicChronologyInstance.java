@@ -7,7 +7,6 @@ import java.io.IOException;
 
 
 /**
- * <h2>LogicChronologyInstance</h2>
  * Logic for the chronology instance. This class loads the instanced time values that will exist within an instance of
  * a game. If a saved game is loaded, this class reads in the stored game values, and when a game is saved, this class
  * writes those time values to the data stream.
