@@ -7,4 +7,7 @@ import brm.platform.window.controls.AControl;
  * @author Gregory
  */
 abstract public class AControlComponent extends AControl {
+
+  public AControlComponent() {
+  }
 }
