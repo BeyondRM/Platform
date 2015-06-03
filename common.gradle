@@ -10,9 +10,8 @@ targetCompatibility = '1.8'
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
 repositories {
-  //  http://www.gradle.org/docs/current/userguide/dependency_management.html#sec:repositories
-  mavenLocal()
-  mavenCentral()
+  mavenLocal();
+  mavenCentral();
 }
 
 dependencies {
