@@ -1,0 +1,34 @@
+<?xml ?>
+<!--
+generic note
+-->
+<brm-platform-species>
+  <!--
+  A node list containing individual graphics for this species.
+  -->
+  <species-base-graphics>
+    <!--
+    Basic graphics definition for this race, by age and gender. This node contains a number of subnodes with attributes
+    for defining each image per age category and gender; so we can define images that give representational appearances
+    of both a young female child and an elderly male adult, and many instances in between.
+    -->
+    <species-graphic age-category="" gender-type="" url="" />
+  </species-base-graphics>
+  <!--
+  A node list containing individual identity information for this species.
+  -->
+  <species-base-identity name="" note="" >
+    <!--
+    Identity notes for describing the species.
+    -->
+    <species-identity-note purpose="" text="" />
+  </species-base-identity>
+  <!--
+  Species experience and leveling.
+  -->
+  <species-experience-leveling max-level="" min-level="" xp-curve="" />
+  <!--
+  Species combat options.
+  -->
+  <species-options ai-controlled="" dual-wield="" equipment-locked="" mighty-guard="" />
+</brm-platform-species>
