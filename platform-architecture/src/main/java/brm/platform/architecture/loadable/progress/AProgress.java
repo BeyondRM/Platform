@@ -3,7 +3,6 @@ import java.awt.image.BufferedImage;
 
 
 /**
- * <h2>AProgress</h2>
  * An abstract progress container. This is the parent class for progress-group and progress-bar instances.
  * @author Gregory
  */

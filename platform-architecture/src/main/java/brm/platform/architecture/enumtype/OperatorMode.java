@@ -2,7 +2,6 @@ package brm.platform.architecture.enumtype;
 
 
 /**
- * <h2>OperatorMode</h2>
  * The operator mode. This is used to specify how the platform architecture is being used; it contains instances for if
  * the editor or the engine is in control of operation.
  * @author Gregory

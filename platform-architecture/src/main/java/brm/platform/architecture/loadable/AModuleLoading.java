@@ -4,7 +4,6 @@ import java.io.File;
 
 
 /**
- * <h2>AModuleLoading</h2>
  * Module-loading method declarations. This abstract class allows loading the default and instanced chronological data,
  * from their respective data-streams.
  * <p/>

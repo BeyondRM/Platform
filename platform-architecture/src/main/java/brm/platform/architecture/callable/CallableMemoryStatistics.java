@@ -3,7 +3,7 @@ import java.util.concurrent.Callable;
 
 
 /**
- * <h2>CallableVersionGameCore</h2>
+ * Callable memory statistics.
  * @author Gregory
  */
 public class CallableMemoryStatistics implements Callable<String> {

@@ -3,7 +3,7 @@ import java.util.concurrent.Callable;
 
 
 /**
- * <h2>CallableAppVer</h2>
+ * Callable system details.
  * @author Gregory
  */
 public class CallableSystem implements Callable<String> {

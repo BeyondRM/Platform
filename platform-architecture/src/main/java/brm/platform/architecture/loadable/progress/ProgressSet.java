@@ -3,7 +3,6 @@ import java.awt.image.BufferedImage;
 
 
 /**
- * <h2>ProgressSet</h2>
  * @author Gregory
  */
 public class ProgressSet extends AProgress {

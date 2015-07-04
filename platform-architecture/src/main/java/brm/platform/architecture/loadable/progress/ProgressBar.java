@@ -3,7 +3,6 @@ import java.awt.image.BufferedImage;
 
 
 /**
- * <h2>ProgressBar</h2>
  * @author Gregory
  */
 public class ProgressBar extends AProgress {
