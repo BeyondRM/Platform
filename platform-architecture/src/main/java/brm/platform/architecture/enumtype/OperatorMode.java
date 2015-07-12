@@ -72,6 +72,10 @@ public enum OperatorMode {
 
   /**
    * A private constructor. This is not to be used elsewhere!!
+   * @param b
+   * @param i
+   * @param s
+   * @param t
    * @see OperatorMode
    */
   private OperatorMode(boolean b, int i, String s, String t) {
@@ -83,6 +87,7 @@ public enum OperatorMode {
 
   /**
    * Get the operator mode. This takes an integer value, and returns a matching mode.
+   * @param i
    * @return An {@link OperatorMode} instance.
    * @see OperatorMode
    */
