@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The BeyondRM Race definition. See the Javadoc inside 'brm.platform.race.PlatformRace' for more information. -->
+<brm-platform-race version="">
+
+  <!-- The node containing a list of individual graphics for this race. -->
+  <race-base-graphics>
+    <!-- Basic graphics definition for this race, by age and gender, and containing the graphic URL. -->
+    <race-graphic abbreviation="" age-category="" gender-type="" url="" />
+  </race-base-graphics>
+
+  <!-- The node containing relevant identity information for this race. -->
+  <race-base-identity name="" note="" >
+    <!-- Identity notes for describing the race. -->
+    <race-identity-note purpose="" text="" />
+  </race-base-identity>
+
+  <!--
+  Defines the various equipment slots and equippable options for this race.
+
+  This may be useful for many purposes; the primary one being, a non-humanoid may not have the limbs or body structures
+  that a humanoid does, and so may literally not be able to equip certain classes of armor or weapons. For example, for
+  a sentient bear-like race that grow spiky projections over the body, typical nonmetal armor would be punctured, metal
+  armor would be somewhat difficult to wear or just unwieldy due to working around the spikes; footwear or headwear are
+  one example of this.
+
+  On the other hand, allowing this to be an editable list means a larger race might have or require more equipment slot
+  mounting-points; in the above example, if the sentient bear race did not have spikes, it may perhaps require three or
+  four times as much body-armor due to their size &mdash; but because of their size, weight, or general musculature, an
+  individual of this race just might be able to handle such as easily as a human villager would wear cotton clothing.
+  -->
+  <race-equipment-slots>
+
+    <!--
+    The individual slot definition, that controls which object type goes in this slot, as well as which object subtypes
+    may be preferred or not-allowed (equippable objects that are sub-types of the slot's type are assumed automatically
+    allowed).
+
+    This node also records an ordinal index, whether the slot is locked, the equipment type, sub-type attributes (which
+    sub-types are disallowed and preferred), and usage dependency (for controlling enabled or visibility state).
+
+    The ordinal index exists so that proper ordering of the individual slots are maintained, both in the editor, and in
+    the game. Generally, this order will go something like this: headwear, bodywear, footwear, accessories, miscellany.
+    (In other words, from "top" to "bottom".) But custom-named slot types may be put in an order that makes sense for a
+    member of the race; for a sentient horse-ish species like a satyr, equippable points include headwear, chest armor,
+    maybe a piece that covers where the torso meets the horse-body, and the remaining armor pieces are the same as for
+    historical war-horses in Earth's cultures of the past (Google images of horse armor to see what that entails).
+
+    For minimal considerations, the above listed slot-types (head, body, foot, accessory) may be all that is necessary;
+    strategy-RPG games like Suikoden II contain them, though a game may allow for multiple accessory-type slots to hold
+    active-use consumables and equipment for combat.
+
+    For another example, the Lamia species, havng snake-like features, requires a lot of flexibility for ground motion;
+    her armor pieces would need to be smaller inter-connecting fragments that do not hinder normal movement. The "above
+    the waist" portions of a Lamia's body should be presumed similar to a human's, often a human female (as shown among
+    other media featuring Lamia, like the MGQ game series, whether or not they are opponents to the main character).
+
+    Specifying sub-types of armor or equipment that a slot can hold is important; a smallish halfliing individual would
+    be able to wear "light armor" because it is more lightweight, and perhaps sometimes armor a bit more medium-weight,
+    depending upon Strength. The sentient bear race, on the other hand, would be able to wear any weight of armor, but
+    might find little use in wearing the lighter-weight equips due to their inherent mass and the battle damage they do
+    or receive.
+
+    A final attribute is 'use-depends-on', for defining that the existence of a slot is variable, or depends on certain
+    generic or specific value of something. The aforementioned sentient bear race might be, alongside being the party's
+    brawler class, the party's heavy-lifter, extending the maximum number or weight of inventory objects; an individual
+    of the race might have a conditionally-enabled slot for holding an inventory container which holds specialty items.
+    Another use might be for class-based requirements, such as a healer might have a Healer's Pouch, for containing any
+    relevant herbs, medicines, surgical tools, whatever may be required.
+
+    The dependency can specify the individual's class, or could be a specific variable value, like a boolean condition.
+    Engine loading of the race definitions should handle how
+    -->
+    <race-slot index="" locked="" type="" types-disallowed="" types-preferred="" use-depends-on="" />
+  </race-equipment-slots>
+
+  <!--
+  Species experience and leveling. This puts the experience-learning and level-advancement into the race definition, by
+  default; a class could still override this, but the
+  -->
+  <race-experience-leveling max-level="" min-level="" xp-curve="" />
+
+  <!--
+  Species combat options. Configure whether by default the race options are set: is AI-controlled, dual-wields weapons,
+  equipment slots are locked, or is a "mighty guard".
+
+  Each of these may have specific implementation in a game, especially in combat scenarios; but they may apply to other
+  aspects of a game, such as game events.
+  -->
+  <race-options ai-controlled="" dual-wield="" equipment-locked="" mighty-guard="" />
+
+</brm-platform-race>
