@@ -1,27 +1,27 @@
-package brm.platform.species;
+package brm.platform.race;
 import brm.platform.architecture.loadable.AModuleLoading;
 import brm.platform.architecture.loadable.progress.ProgressBar;
 import java.io.File;
 
 
 /**
- * <h2>PlatformSpecies</h2>
+ * <h2>PlatformRaces</h2>
  * The platform species handler.
  * @author Gregory
  * @see #instance instance
- * @see #PlatformSpecies PlatformSpecies
+ * @see #PlatformSpeciesPlatformRaces
  */
-public class PlatformSpecies extends AModuleLoading {
+public class PlatformRaces extends AModuleLoading {
   /**
-   * The default {@link PlatformSpecies} instance.
+   * The default {@link PlatformRaces} instance.
    */
-  public static final PlatformSpecies instance;
+  public static final PlatformRaces instance;
 
   static {
-    instance = new PlatformSpecies();
+    instance = new PlatformRaces();
   }
 
-  private PlatformSpecies() {
+  private PlatformRaces() {
   }
 
   @Override
