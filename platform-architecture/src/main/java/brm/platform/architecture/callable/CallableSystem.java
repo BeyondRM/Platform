@@ -7,6 +7,9 @@ import java.util.concurrent.Callable;
  * @author Gregory
  */
 public class CallableSystem implements Callable<String> {
+  public CallableSystem() {
+  }
+
   @Override
   public String call() throws Exception {
     String osname = System.getProperty("os.name");

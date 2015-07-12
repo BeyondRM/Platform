@@ -7,6 +7,9 @@ import java.util.concurrent.Callable;
  * @author Gregory
  */
 public class CallableMemoryStatistics implements Callable<String> {
+  public CallableMemoryStatistics() {
+  }
+
   @Override
   public String call() throws Exception {
     Runtime runtime = Runtime.getRuntime();
