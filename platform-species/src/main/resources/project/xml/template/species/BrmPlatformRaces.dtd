@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!--
+    TODO define vocabulary identification
+    PUBLIC ID: -//vendor//vocabulary//EN
+    SYSTEM ID: http://server/path/BrmPlatformRaces.dtd
+
+-->
+
+<!--
+    An example how to use this DTD from your XML document:
+
+    <?xml version="1.0"?>
+
+    <!DOCTYPE brm-platform-races SYSTEM "BrmPlatformRaces.dtd">
+
+    <brm-platform-races>
+    ...
+    </brm-platform-races>
+-->
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT brm-platform-races (brm-platform-race)*>
+<!ATTLIST brm-platform-races
+    version CDATA #IMPLIED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT brm-platform-race EMPTY>
+<!ATTLIST brm-platform-race
+    display-name CDATA #IMPLIED
+    file-source CDATA #IMPLIED
+  >
