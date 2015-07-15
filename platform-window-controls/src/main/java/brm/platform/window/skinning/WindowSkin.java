@@ -4,7 +4,6 @@ import brm.platform.window.skinning.skin.SkinnableContainer;
 
 
 /**
- * <h2>WindowSkin</h2>
  * The Window Skin manager. This singleton class contains fields and methods for handling all the skinning graphics and
  * properties for the system.
  * <p/>
