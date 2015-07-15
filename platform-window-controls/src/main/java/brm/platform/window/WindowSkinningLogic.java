@@ -13,6 +13,8 @@ import java.io.IOException;
 public class WindowSkinningLogic extends ACryptoLogic {
   @Override
   public void performDecryption(DataInputStream dis) throws IOException {
+    if(!PlatformArchitecture.mode.devOnly) {
+    }
   }
 
   @Override
