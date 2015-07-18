@@ -1,2 +1,2 @@
 //
-include ':platform-architecture', ':platform-chronology', ':platform-events', ':platform-species', ':platform-window-controls'
+include ':platform-architecture', ':platform-chronology', ':platform-events', ':platform-items', ':platform-species', ':platform-window-controls'
