@@ -1,4 +1,4 @@
-package brm.platform.race;
+package brm.platform.race.type;
 import abc.cryptology.logics.ACryptoLogic;
 import brm.platform.architecture.PlatformArchitecture;
 import brm.platform.race.enums.GenderType;

@@ -1,4 +1,4 @@
-package brm.platform.race;
+package brm.platform.race.type;
 import abc.cryptology.logics.ACryptoLogic;
 import brm.platform.architecture.PlatformArchitecture;
 import java.io.DataInputStream;
@@ -21,7 +21,7 @@ import java.util.List;
  * <p/>
  * This includes the definitions of which types of equipable items, skills, and spell types a member of this race can
  * use; because these things are statically-defined, a game is improved by allowing only specific classes for certain
- * races, or created characters can only use certain armor or weapon types that are not "unallowed" by the race
+ * races, or created characters can only use certain armor or weapon types that are not "unallowed" by a race
  * definition. This can allow a more "strategic" creation of game characters and classes that actually keep actual
  * racial attributes in mind....
  * @author Gregory
