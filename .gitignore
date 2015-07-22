@@ -53,6 +53,12 @@ build/
 hs_err_pid*
 
 
+### Gradle ###
+gradle/
+gradlew
+gradlew.bat
+
+
 ### NetBeans ###
 nbproject/private/
 build/
@@ -63,9 +69,9 @@ nbactions.xml
 nb-configuration.xml
 
 
-### NetBeans Gradle plugin ###
-.nb-gradle/
+### NetBeans Gradle Plugin ###
 .nb-gradle-properties
+.nb-gradle/
 
 
 ### Windows ###
