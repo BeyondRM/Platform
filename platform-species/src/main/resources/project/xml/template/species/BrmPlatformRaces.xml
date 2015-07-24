@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE brm-platform-races SYSTEM "BrmPlatformRaces.dtd">
-<!-- BeyondRM Platform Races. This list enumerates the individual races in a game. -->
-<brm-platform-races version="">
-  <!-- The node layout for listing the Race XML files. -->
-  <brm-platform-race display-name="" file-source="" />
-</brm-platform-races>
