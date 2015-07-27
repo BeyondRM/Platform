@@ -1,4 +1,4 @@
-package brm.platform.race.type;
+package brm.platform.races.race;
 import abc.cryptology.logics.ACryptoLogic;
 import brm.platform.architecture.PlatformArchitecture;
 import java.io.DataInputStream;

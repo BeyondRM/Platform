@@ -1,4 +1,4 @@
-package brm.platform.race.enums;
+package brm.platform.races.enums;
 import java.util.ResourceBundle;
 
 /**

@@ -1,4 +1,4 @@
-package brm.platform.race;
+package brm.platform.races;
 import brm.platform.architecture.loadable.AModuleLoading;
 import brm.platform.architecture.loadable.progress.ProgressBar;
 import java.io.File;
