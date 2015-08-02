@@ -1,6 +1,7 @@
 package brm.platform.races.race;
 import abc.cryptology.logics.ACryptoLogic;
 import brm.platform.architecture.PlatformArchitecture;
+import brm.platform.races.enums.AgeCat;
 import brm.platform.races.enums.GenderType;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -39,7 +40,7 @@ public class RaceGraphics extends ACryptoLogic {
    */
   private String abbreviation;
   /**
-   * The age category. This specifies what age or time-period in the race's life-span this image appears to relate to.
+   * The age category. This specifies what age or time-period in the species life-span this image appears to relate to.
    * Unless you are defining an elemental being or a god that sprang forth fully-formed, age may be less important; but
    * <p/>
    * Generic age-categories may be one of the following (with equivalent information to a human lifespan):
@@ -59,11 +60,14 @@ public class RaceGraphics extends ACryptoLogic {
    * probably will not be characters in a game; and characters that are "elderly" or older will probably be few and far
    * between in a game, perhaps literally reserved for the few respected and venerated masters of their realm.
    */
-  private String ageCategory;
+  private AgeCat ageCategory;
   /**
    * The image URL. This is the file reference for the literal image.
    */
   private String imageUrl;
+
+  public RaceGraphics() {
+  }
 
   /**
    * A public constructor. This constructor instantiates a new race graphics item, with the following parameters.
@@ -72,7 +76,7 @@ public class RaceGraphics extends ACryptoLogic {
    * @param s1 A {@link String} object, representing the {@link #ageCategory age category}.
    * @param s2 A {@link String} object, representing the {@link #imageUrl image URL}.
    */
-  public RaceGraphics(GenderType gt, String s0, String s1, String s2) {
+  public RaceGraphics(GenderType gt, String s0, AgeCat s1, String s2) {
     genderType = gt;
     abbreviation = s0;
     ageCategory = s1;
@@ -85,12 +89,7 @@ public class RaceGraphics extends ACryptoLogic {
       byte b;
       String s;
       // read gendertype
-      b = dis.readByte();
-      s = "";
-      for(int i = 0; i < b; i++) {
-        s += dis.readChar();
-      }
-      genderType = GenderType.valueOf(s);
+      genderType = GenderType.fromByte(dis.readByte());
       // read abbreviation
       b = dis.readByte();
       s = "";
@@ -99,12 +98,7 @@ public class RaceGraphics extends ACryptoLogic {
       }
       abbreviation = s;
       // read age category
-      b = dis.readByte();
-      s = "";
-      for(int i = 0; i < b; i++) {
-        s += dis.readChar();
-      }
-      ageCategory = s;
+      ageCategory = AgeCat.fromId(dis.readByte());
       // read image url
       b = dis.readByte();
       s = "";
@@ -121,7 +115,7 @@ public class RaceGraphics extends ACryptoLogic {
       dos.writeByte(genderType.name.length());
       dos.writeChars(genderType.name);
       dos.writeChars(abbreviation);
-      dos.writeChars(ageCategory);
+      dos.writeByte(ageCategory.ordinal());
       dos.writeChars(imageUrl);
     }
   }
@@ -134,7 +128,7 @@ public class RaceGraphics extends ACryptoLogic {
     return abbreviation;
   }
 
-  public String getAgeCategory() {
+  public AgeCat getAgeCategory() {
     return ageCategory;
   }
 

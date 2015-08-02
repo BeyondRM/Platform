@@ -1,6 +1,8 @@
 package brm.platform.races.race;
 import abc.cryptology.logics.ACryptoLogic;
 import brm.platform.architecture.PlatformArchitecture;
+import brm.platform.races.enums.AgeCat;
+import brm.platform.races.enums.GenderType;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -21,25 +23,58 @@ import java.util.List;
  * <p/>
  * This includes the definitions of which types of equipable items, skills, and spell types a member of this race can
  * use; because these things are statically-defined, a game is improved by allowing only specific classes for certain
- * races, or created characters can only use certain armor or weapon types that are not "unallowed" by a race
+ * races, or created characters can only use certain armor or weapon types that are not "non-allowed" by a race
  * definition. This can allow a more "strategic" creation of game characters and classes that actually keep actual
  * racial attributes in mind....
  * @author Gregory
  */
-public class PlatformRace extends ACryptoLogic {
-  private List<RaceGraphics> graphics;
+public class Race extends ACryptoLogic {
+  private RaceGraphics[] graphics;
+
+  public Race() {
+  }
 
   @Override
   public void performDecryption(DataInputStream dis) throws IOException {
     if(!PlatformArchitecture.mode.devOnly) {
       int i = dis.readByte();
-      graphics = new ArrayList<>(i);
+      graphics = new RaceGraphics[i];
+      for(int j = 0; j == i; j++) {
+        RaceGraphics raceGraphics = new RaceGraphics();
+        raceGraphics.performDecryption(dis);
+      }
     }
   }
 
   @Override
   public void performEncryption(DataOutputStream dos) throws IOException {
     if(PlatformArchitecture.mode.devOnly) {
+      dos.writeByte(graphics.length);
+      for(RaceGraphics rg : graphics) {
+        rg.performEncryption(dos);
+      }
     }
+  }
+
+  public final RaceGraphics[] getGraphics(GenderType gt) {
+    List<RaceGraphics> rg = new ArrayList<>(0);
+    for(RaceGraphics rg1 : graphics) {
+      if(rg1.getGenderType() == gt) {
+        rg.add(rg1);
+      }
+    }
+    //TODO: This method should return an array of graphics from the gender classification.
+    return rg.isEmpty() ? null : (RaceGraphics[])rg.toArray();
+  }
+
+  public final RaceGraphics[] getGraphics(byte b) {
+    List<RaceGraphics> rg = new ArrayList<>(0);
+    for(RaceGraphics rg1 : graphics) {
+      if(rg1.getAgeCategory() == AgeCat.fromId(b)) {
+        rg.add(rg1);
+      }
+    }
+    //TODO: This method should return an array of graphics from the age-category index.
+    return rg.isEmpty() ? null : (RaceGraphics[])rg.toArray();
   }
 }
