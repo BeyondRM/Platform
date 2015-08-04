@@ -3,6 +3,14 @@ import abc.cryptology.AbcCryptology;
 import brm.platform.architecture.loadable.AModuleLoading;
 import brm.platform.architecture.loadable.progress.ProgressBar;
 import java.io.File;
+import java.io.IOException;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.crypto.NoSuchPaddingException;
 
 
 /**
@@ -93,8 +101,12 @@ public class PlatformWindowControls extends AModuleLoading {
   @Override
   public void initializeBefore(ProgressBar pb) {
     pb.reset(initializedCount, "Platform Window Controls - index file");
-    // start decrypting the index metadata
-    AbcCryptology.instance.performDecryption(logic.seedCore, logic, "PBEWithMD5AndDES", sourcePath, logic.cipher);
+    try {
+      // start decrypting the index metadata
+      AbcCryptology.instance.performDecryption(logic.seedCore, logic, "PBEWithMD5AndDES", sourcePath, logic.cipher);
+    } catch(NoSuchAlgorithmException | InvalidKeySpecException | NoSuchPaddingException | InvalidKeyException | InvalidAlgorithmParameterException | IOException ex) {
+      Logger.getLogger(PlatformWindowControls.class.getName()).log(Level.SEVERE, null, ex);
+    }
   }
 
   @Override

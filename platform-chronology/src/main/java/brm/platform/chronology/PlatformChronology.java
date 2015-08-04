@@ -4,8 +4,16 @@ import brm.platform.architecture.loadable.AModuleLoading;
 import brm.platform.architecture.loadable.progress.ProgressBar;
 import brm.platform.chronology.calendar.CalendarDefinition;
 import java.io.File;
+import java.io.IOException;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.crypto.NoSuchPaddingException;
 
 
 /**
@@ -67,11 +75,15 @@ public class PlatformChronology extends AModuleLoading {
   @Override
   public void initializeBefore(ProgressBar pb) {
     if(!dataLoaded && !dataValidated && sourcePath != null && sourcePath.exists()) {
-      AbcCryptology.instance.performDecryption(currentDateDay,
-                                               new LogicChronologyDefaults(),
-                                               null,
-                                               sourcePath,
-                                               null);
+      try {
+        AbcCryptology.instance.performDecryption(currentDateDay,
+                                                 new LogicChronologyDefaults(),
+                                                 null,
+                                                 sourcePath,
+                                                 null);
+      } catch(NoSuchAlgorithmException | InvalidKeySpecException | NoSuchPaddingException | InvalidKeyException | InvalidAlgorithmParameterException | IOException ex) {
+        Logger.getLogger(PlatformChronology.class.getName()).log(Level.SEVERE, null, ex);
+      }
     }
   }
 
