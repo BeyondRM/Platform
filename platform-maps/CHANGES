@@ -1,0 +1,6 @@
+A listing of changes to the project.
+
+
+0.2 -- 2015/09/14 and on.
+
+  - Added this module as a new Gradle project; this is the beginning of being able to load and verify map data.
