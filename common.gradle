@@ -2,20 +2,19 @@
 apply plugin: 'java'
 apply plugin: 'maven'
 
-String mavenGroupId = 'beyondrm.platform'
-String mavenVersion = '0.1'
+String mavenGroupId = rootProject.group
+String mavenVersion = rootProject.version
 
 sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
 repositories {
-  mavenLocal();
-  mavenCentral();
+  mavenLocal()
+  mavenCentral()
 }
 
 dependencies {
-  // Adding dependencies here will add the dependencies to each subproject.
   compile 'abc.core:abc-cryptology:0.1'
   compile 'abc.core:abc-errorlogs:0.1'
   testCompile 'junit:junit:4.10'

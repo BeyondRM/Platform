@@ -3,7 +3,9 @@ include\
 ':platform-architecture',\
 ':platform-chronology',\
 ':platform-events',\
+':platform-graphics',\
 ':platform-items',\
+':platform-maps',\
 ':platform-races',\
 ':platform-vocabulary-i18n',\
 ':platform-window-controls'
