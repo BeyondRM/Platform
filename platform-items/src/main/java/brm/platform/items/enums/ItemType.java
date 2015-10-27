@@ -60,7 +60,7 @@ public enum ItemType {
    * typically; see something else entirely.
    * @see ItemType
    */
-  it01, // consumable seed/stat increment
+  it01, // consumable seed/stat increment (a.k.a., a "booster" that increases something)
   /**
    * A consumable skill-book. This item is essentially a learnable skill instance; if the character using it is allowed
    * to learn the contained skill, this skill book will be consumed and the character will learn the skill.
@@ -216,7 +216,7 @@ public enum ItemType {
   /**
    * @see ItemType
    */
-  it36, // equipment armor - headwear-caps/hats   (fabric, fiber, or hide-based headgear)
+  it36, // equipment armor - headwear-caps/hats   (fabric, fiber, or hide-based headgear -- straw hat, anyone?)
   /**
    * @see ItemType
    */
@@ -228,7 +228,7 @@ public enum ItemType {
   /**
    * @see ItemType
    */
-  it39, // equipment armor - headwear-specialized (royal crowns, embeddable...)
+  it39, // equipment armor - headwear-specialized (royal crowns, embeddable with jewels etc.)
   /**
    * @see ItemType
    */
