@@ -6,21 +6,81 @@ import java.awt.image.BufferedImage;
  * An abstract progress container. This is the parent class for progress-group and progress-bar instances.
  * @author Gregory
  */
-abstract public class AProgress {
+abstract public class Progress {
+  /**
+   * The buffered image.
+   * @see Progress
+   */
   protected final BufferedImage image;
+  /**
+   * Whether it can resize X.
+   * @see Progress
+   */
   protected final boolean resizableX;
+  /**
+   * Whether it can resize Y.
+   * @see Progress
+   */
   protected final boolean resizableY;
+  /**
+   * The label text.
+   * @see Progress
+   */
   protected String text;
+  /**
+   * The progress percent.
+   * @see Progress
+   */
   protected float progressPercent;
+  /**
+   * The current height.
+   * @see Progress
+   */
   protected int currentHeight;
+  /**
+   * The current width.
+   * @see Progress
+   */
   protected int currentWidth;
+  /**
+   * The current X value.
+   * @see Progress
+   */
   protected int currentX;
+  /**
+   * The current X value.
+   * @see Progress
+   */
   protected int currentY;
+  /**
+   * The target height.
+   * @see Progress
+   */
   protected int targetHeight;
+  /**
+   * The target width.
+   * @see Progress
+   */
   protected int targetWidth;
+  /**
+   * The target X value.
+   * @see Progress
+   */
   protected int targetX;
+  /**
+   * The target Y value.
+   * @see Progress
+   */
   protected int targetY;
+  /**
+   * The index value.
+   * @see Progress
+   */
   protected int valueIndex;
+  /**
+   * The total value.
+   * @see Progress
+   */
   protected int valueTotal;
 
   /**
@@ -33,9 +93,9 @@ abstract public class AProgress {
    * @param iw An {@link Integer} value, representing the {@link #currentWidth currentWidth} value.
    * @param ih An {@link Integer} value, representing the {@link #currentHeight currentHeight} value.
    * @param s0 A {@link String} array, representing the {@link #text text} value.
-   * @see AProgress
+   * @see Progress
    */
-  public AProgress(BufferedImage bi, boolean b0, boolean b1, int ix, int iy, int iw, int ih, String s0) {
+  public Progress(BufferedImage bi, boolean b0, boolean b1, int ix, int iy, int iw, int ih, String s0) {
     image = bi;
     resizableX = b0;
     resizableY = b1;
@@ -48,7 +108,7 @@ abstract public class AProgress {
 
   /**
    * Update the progress percent.
-   * @see AProgress
+   * @see Progress
    */
   private void updateProgressPercent() {
     if(valueIndex == 0) {
@@ -63,7 +123,7 @@ abstract public class AProgress {
   /**
    * Whether the progress is full.
    * @return A {@link Boolean} condition.
-   * @see AProgress
+   * @see Progress
    */
   public final boolean isProgressComplete() {
     return progressPercent == 1.0f;
@@ -72,7 +132,7 @@ abstract public class AProgress {
   /**
    * Whether we can resize the width.
    * @return A {@link Boolean} condition.
-   * @see AProgress
+   * @see Progress
    */
   public final boolean isResizableX() {
     return resizableX;
@@ -81,7 +141,7 @@ abstract public class AProgress {
   /**
    * Whether we can resize the height.
    * @return A {@link Boolean} condition.
-   * @see AProgress
+   * @see Progress
    */
   public final boolean isResizableY() {
     return resizableY;
@@ -90,7 +150,7 @@ abstract public class AProgress {
   /**
    * Get the progress percent.
    * @return A {@link Float} value.
-   * @see AProgress
+   * @see Progress
    */
   public final float getProgressPercent() {
     // presumably, method 'updateProgressPercent()' should be called before this...
@@ -100,7 +160,7 @@ abstract public class AProgress {
   /**
    * Get the current height.
    * @return An {@link Integer} value.
-   * @see AProgress
+   * @see Progress
    */
   public final int getCurrentHeight() {
     return currentHeight;
@@ -109,7 +169,7 @@ abstract public class AProgress {
   /**
    * Get the current width.
    * @return An {@link Integer} value.
-   * @see AProgress
+   * @see Progress
    */
   public final int getCurrentWidth() {
     return currentWidth;
@@ -118,7 +178,7 @@ abstract public class AProgress {
   /**
    * Get the index value.
    * @return An {@link Integer} value.
-   * @see AProgress
+   * @see Progress
    */
   public final int getValueIndex() {
     return valueIndex;
@@ -127,7 +187,7 @@ abstract public class AProgress {
   /**
    * Get the total value.
    * @return An {@link Integer} value.
-   * @see AProgress
+   * @see Progress
    */
   public final int getValueTotal() {
     return valueTotal;
@@ -135,7 +195,7 @@ abstract public class AProgress {
 
   /**
    * Draw the progress.
-   * @see AProgress
+   * @see Progress
    */
   public void draw() {
   }
@@ -144,7 +204,7 @@ abstract public class AProgress {
    * Reset all values. This will set all non-final fields to their new values.
    * @param i An {@link Integer} value, representing the {@link #valueTotal valueTotal}.
    * @param s A {@link String} object, representing the {@link #text text} label.
-   * @see AProgress
+   * @see Progress
    */
   public void reset(int i, String s) {
     valueTotal = i;
@@ -157,7 +217,7 @@ abstract public class AProgress {
    * Update the progress. This method increments our {@link #valueIndex valueIndex}, sets the {@link #text text} to a
    * given String parameter, then updates the progress percent (a {@code float} value.
    * @param s A {@link String} object, representing the {@link #text text} label.
-   * @see AProgress
+   * @see Progress
    */
   public void update(String s) {
     valueIndex++;

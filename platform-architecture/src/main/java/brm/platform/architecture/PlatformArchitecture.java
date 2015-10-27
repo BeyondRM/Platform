@@ -1,5 +1,5 @@
 package brm.platform.architecture;
-import abc.cryptology.logics.ACryptoLogic;
+import abc.cryptology.logics.Crypto;
 import brm.platform.architecture.enumtype.OperatorMode;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -12,7 +12,7 @@ import java.io.IOException;
  * @see #instance instance
  * @see #mode mode
  */
-public class PlatformArchitecture extends ACryptoLogic {
+public class PlatformArchitecture extends Crypto {
   /**
    * The default {@link PlatformArchitecture} instance.
    */

@@ -3,7 +3,7 @@ import java.util.concurrent.Callable;
 
 
 /**
- * <h2>CallableVersionGameCore</h2>
+ * The callable version of the game core.
  * @author Gregory
  */
 public class CallableVersionGameCore implements Callable<String> {

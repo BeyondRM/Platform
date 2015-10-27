@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage;
 /**
  * @author Gregory
  */
-public class ProgressSet extends AProgress {
+public class ProgressSet extends Progress {
   protected final ProgressBar[] bars;
 
   public ProgressSet(BufferedImage bi, boolean b0, boolean b1, int ix, int iy, int iw, int ih, String s0, ProgressBar... pb) {

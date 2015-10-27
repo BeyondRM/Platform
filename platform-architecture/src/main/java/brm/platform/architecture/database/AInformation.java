@@ -1,5 +1,6 @@
 package brm.platform.architecture.database;
-import abc.cryptology.logics.ACryptoLogic;
+import abc.cryptology.logics.Crypto;
+import brm.platform.architecture.PlatformArchitecture;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -10,7 +11,7 @@ import java.io.IOException;
  * (including name, notes, and miscellaneous descriptor fields).
  * @author Gregory
  */
-abstract public class AInformation extends ACryptoLogic {
+abstract public class AInformation extends Crypto {
   /**
    * The object name.
    * @see AInformation
@@ -41,10 +42,14 @@ abstract public class AInformation extends ACryptoLogic {
 
   @Override
   public void performDecryption(DataInputStream dis) throws IOException {
+    if(!PlatformArchitecture.mode.devOnly) {
+    }
   }
 
   @Override
   public void performEncryption(DataOutputStream dos) throws IOException {
+    if(PlatformArchitecture.mode.devOnly) {
+    }
   }
 
   /**
@@ -72,5 +77,35 @@ abstract public class AInformation extends ACryptoLogic {
    */
   public String getInfoText() {
     return infoText;
+  }
+
+  /**
+   * Set the item name. This is the default name for an item of this specification, without embellishment.
+   * @see AInformation
+   */
+  public void setInfoName(String s) {
+    if(PlatformArchitecture.mode.devOnly) {
+      infoName = s;
+    }
+  }
+
+  /**
+   * Set the item note. This is the default note for an item of this specification, generally a sentence or two.
+   * @see AInformation
+   */
+  public void setInfoNote(String s) {
+    if(PlatformArchitecture.mode.devOnly) {
+      infoNote = s;
+    }
+  }
+
+  /**
+   * Set the item text. This is the default informational text, up to a small paragraph of description.
+   * @see AInformation
+   */
+  public void setInfoText(String s) {
+    if(PlatformArchitecture.mode.devOnly) {
+      infoText = s;
+    }
   }
 }

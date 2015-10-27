@@ -15,8 +15,10 @@ public class CallableBaseIntroduction implements Callable<String> {
   public CallableBaseIntroduction() {
     bundle = ResourceBundle.getBundle("brm.platform.baseline.crashing.callable.bundles.Callable");
     message = new String[] {
-      "callable.intro0", "callable.intro1", "callable.intro2", "callable.intro3", "callable.intro4", "callable.intro5",
-      "callable.intro6", "callable.intro7", "callable.intro8", "callable.intro9", "callable.introA", "callable.introB"
+      "callable.intro0", "callable.intro1", "callable.intro2",
+      "callable.intro3", "callable.intro4", "callable.intro5",
+      "callable.intro6", "callable.intro7", "callable.intro8",
+      "callable.intro9", "callable.introA", "callable.introB"
     };
   }
 
