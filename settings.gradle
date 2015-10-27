@@ -3,9 +3,12 @@ include\
 ':platform-architecture',\
 ':platform-chronology',\
 ':platform-events',\
+':platform-gamedata',\
+':platform-gamedata-attributes',\
 ':platform-graphics',\
 ':platform-items',\
 ':platform-maps',\
+':platform-media-sounds',\
 ':platform-races',\
 ':platform-vocabulary-i18n',\
 ':platform-window-controls'
