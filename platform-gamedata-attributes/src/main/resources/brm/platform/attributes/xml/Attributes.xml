@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+This document is meant to be the all-inclusive definition of attributes in the project.
+
+Open RPG Maker has each attribute definition in its own XML file, but each file is only one node with attributes; in my
+XML file format, and subsequent encrypted gaming data, it is better to keep together all attributes defined in this one
+XML file (to reduce the number of files).
+
+Each attribute is specified as belonging to a class (either magic or weapon), has an identifier, percentile multipliers
+(tiers A, B, C, D, E), and finally has a title and a type-icon.
+
+In this case, the iconset and the id fields are the only ones that are new &mdash; the former, for editor controls; the
+latter, for the default icon shown in menu screens.
+
+The first child node is for including some defaults for the editor to use when computing new attributes; these item are
+for the editor's use only, and will not go into the game data. We only have a default value for a default iconset; each
+attribute may select a specific icon tile number. Also, the defaults for the multipliers are normally expected to be in
+descending order of magnitude; values such as "200 150 100 50 0" (a value for each multiplier, respectively) are a good
+baseline for default attributes; a discerning game creator can alter their values to suit their needs.
+-->
+<beyondrm-attributes>
+  <attribute-defaults iconset="0" multA="200" multB="150" multC="100" multD="50" multE="0" />
+  <attribute-list>
+    <attribute attclass="mg" iconset="" icon-id="" id="AttrMag00" title="Fire" >
+      <attr-multiipliers multiplier-A="200" multiplier-B="150" multiplier-C="100" multiplier-D="50" multiplier-E="0" />
+    </attribute>
+    <attribute attclass="mg" iconset="" icon-id="" id="AttrMag01" title="Thunder" >
+      <attr-multiipliers multiplier-A="200" multiplier-B="150" multiplier-C="100" multiplier-D="50" multiplier-E="0" />
+    </attribute>
+    <attribute attclass="mg" iconset="" icon-id="" id="AttrMag02" title="Water" >
+      <attr-multiipliers multiplier-A="200" multiplier-B="150" multiplier-C="100" multiplier-D="50" multiplier-E="0" />
+    </attribute>
+    <attribute attclass="mg" iconset="" icon-id="" id="AttrMag03" title="Earth" >
+      <attr-multiipliers multiplier-A="200" multiplier-B="150" multiplier-C="100" multiplier-D="50" multiplier-E="0" />
+    </attribute>
+    <attribute attclass="mg" iconset="" icon-id="" id="AttrMag04" title="Wind" >
+      <attr-multiipliers multiplier-A="200" multiplier-B="150" multiplier-C="100" multiplier-D="50" multiplier-E="0" />
+    </attribute>
+    <attribute attclass="mg" iconset="" icon-id="" id="AttrMag05" title="Holy" >
+      <attr-multiipliers multiplier-A="200" multiplier-B="150" multiplier-C="100" multiplier-D="50" multiplier-E="0" />
+    </attribute>
+    <attribute attclass="mg" iconset="" icon-id="" id="AttrMag06" title="Darkness" >
+      <attr-multiipliers multiplier-A="200" multiplier-B="150" multiplier-C="100" multiplier-D="50" multiplier-E="0" />
+    </attribute>
+    <attribute attclass="mg" iconset="" icon-id="" id="AttrMag07" title="Attack" >
+      <attr-multiipliers multiplier-A="200" multiplier-B="150" multiplier-C="100" multiplier-D="50" multiplier-E="0" />
+    </attribute>
+    <attribute attclass="mg" iconset="" icon-id="" id="AttrMag08" title="Defense" >
+      <attr-multiipliers multiplier-A="200" multiplier-B="150" multiplier-C="100" multiplier-D="50" multiplier-E="0" />
+    </attribute>
+    <attribute attclass="mg" iconset="" icon-id="" id="AttrMag09" title="Mystic" >
+      <attr-multiipliers multiplier-A="200" multiplier-B="150" multiplier-C="100" multiplier-D="50" multiplier-E="0" />
+    </attribute>
+    <attribute attclass="mg" iconset="" icon-id="" id="AttrMag10" title="Agility" >
+      <attr-multiipliers multiplier-A="200" multiplier-B="150" multiplier-C="100" multiplier-D="50" multiplier-E="0" />
+    </attribute>
+    <attribute attclass="mg" iconset="" icon-id="" id="AttrMag11" title="Absorb" >
+      <attr-multiipliers multiplier-A="200" multiplier-B="150" multiplier-C="100" multiplier-D="50" multiplier-E="0" />
+    </attribute>
+
+    <attribute attclass="wp" iconset="" icon-id="" id="AttrWpn00" title="Sword" >
+      <attr-multiipliers multiplier-A="200" multiplier-B="150" multiplier-C="100" multiplier-D="50" multiplier-E="0" />
+    </attribute>
+    <attribute attclass="wp" iconset="" icon-id="" id="AttrWpn01" title="Spear" >
+      <attr-multiipliers multiplier-A="200" multiplier-B="150" multiplier-C="100" multiplier-D="50" multiplier-E="0" />
+    </attribute>
+    <attribute attclass="wp" iconset="" icon-id="" id="AttrWpn02" title="Club" >
+      <attr-multiipliers multiplier-A="200" multiplier-B="150" multiplier-C="100" multiplier-D="50" multiplier-E="0" />
+    </attribute>
+    <attribute attclass="wp" iconset="" icon-id="" id="AttrWpn03" title="Bow" >
+      <attr-multiipliers multiplier-A="200" multiplier-B="150" multiplier-C="100" multiplier-D="50" multiplier-E="0" />
+    </attribute>
+  </attribute-list>
+</beyondrm-attributes>
