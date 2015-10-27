@@ -9,10 +9,14 @@ import java.io.IOException;
 
 /**
  * The platform's races list. This class handles the logic of reading the races-index (in game) and writing the same at
- * project build time (in editor only). It also allows creating
+ * project build time (in editor only).
  * @author Gregory <gregory.cheyney@gmail.com>
  */
 public class Races extends Crypto {
+  /**
+   * A race template. This is a blank template, useful for general humanoid characters and classes.
+   * @see Races
+   */
   private static transient final Race template;
 
   static {
@@ -22,17 +26,28 @@ public class Races extends Crypto {
   /**
    * The list length. It is a {@code short} value because the source byte length has 128 added to it, to be base-zero.
    * The source value is read and written as a byte (values -128 to 127), because who ever needs more than 256 races???
+   * @see Races
    */
   private transient short length;
   /**
    * The race list. This is the race definition array itself.
+   * @see Races
    */
   protected Race[] race;
 
+  /**
+   * A public constructor. Calls the other constructor, passing in the template race object.
+   * @see Races
+   */
   public Races() {
     this(template);
   }
 
+  /**
+   * A public constructor. This takes an unbounded length of race objects to set as the race list.
+   * @param list
+   * @see Races
+   */
   public Races(Race... list) {
     race = list;
   }

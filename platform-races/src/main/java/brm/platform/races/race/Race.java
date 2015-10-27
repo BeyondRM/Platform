@@ -16,7 +16,7 @@ import java.util.List;
  * Both the Editor and Engine use this class; the editor uses it to write the game data from the project data, then the
  * engine uses this same class to load race data into memory. An editor does not typically need to decrypt an encrypted
  * file, and the engine does not typically need to write encrypted data.
- * <h1>From the XML</h1>
+ * <h1>From the XML.</h1>
  * The BeyondRM Species definition. This is used to save the editable race-defining data from the editor. Race
  * definitions come before the individual character and class definitions, because it is supposed to provide the
  * unchanging properties that the class and the character depend upon.
@@ -29,8 +29,18 @@ import java.util.List;
  * @author Gregory
  */
 public class Race extends Crypto {
+  /**
+   * The race graphics array. This is an array of <i>all</i> race graphics for this race; it should include one or more
+   * instances of each age category and gender type. If a game will have a kind of "encyclopedia" of sorts, the getters
+   * would be useful for finding the relevant images....
+   * @see Race
+   */
   private RaceGraphics[] graphics;
 
+  /**
+   * A private constructor. Goes nowhere, does nothing.
+   * @see Race
+   */
   public Race() {
   }
 

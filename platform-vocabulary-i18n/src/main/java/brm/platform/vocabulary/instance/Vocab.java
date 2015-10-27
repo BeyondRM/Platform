@@ -18,14 +18,14 @@ abstract public class Vocab {
    */
   private transient final String basename;
   /**
-   * The resource bundle instance. This is the resource bundle which is used to obtain localized texts.
+   * The resource bundle locale. This is used to control which language locale the vocabulary unit use.
    * <p/>
    * This should only be set in the constructor, and does not need to be returned in any method.
    * @see Vocab
    */
   protected transient ResourceBundle bundle;
   /**
-   * The resource bundle locale. This is used to control which language locale the vocabulary unit use.
+   * The resource bundle instance. This is the resource bundle which is used to obtain localized texts.
    * <p/>
    * This should only be set in the constructor, and does not need to be returned in any method.
    * @see Vocab

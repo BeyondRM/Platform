@@ -5,7 +5,6 @@ import java.io.IOException;
 
 
 /**
- * <h2>SkinnableContainer</h2>
  * A "skinnable container". This class defines a particular window-skin that is to be used for containers.
  * @author Gregory
  * @see ASkinnable

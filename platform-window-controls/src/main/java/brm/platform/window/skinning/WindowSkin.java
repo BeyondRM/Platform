@@ -19,7 +19,7 @@ import brm.platform.window.skinning.skin.SkinnableContainer;
  */
 public class WindowSkin { // implements AModuleLoading
   /**
-   * The default {@link WindowSkin} instance.
+   * The default instance.
    * @see WindowSkin
    */
   public static final WindowSkin instance;

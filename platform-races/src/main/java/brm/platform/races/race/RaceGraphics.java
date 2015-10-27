@@ -59,13 +59,19 @@ public class RaceGraphics extends Crypto {
    * Not all of the above need include an image; they are merely listed for generalization. Anything up to "adolescent"
    * probably will not be characters in a game; and characters that are "elderly" or older will probably be few and far
    * between in a game, perhaps literally reserved for the few respected and venerated masters of their realm.
+   * @see RaceGraphics
    */
   private AgeCat ageCategory;
   /**
    * The image URL. This is the file reference for the literal image.
+   * @see RaceGraphics
    */
   private String imageUrl;
 
+  /**
+   * A public constructor.
+   * @see RaceGraphics
+   */
   public RaceGraphics() {
   }
 
@@ -75,6 +81,7 @@ public class RaceGraphics extends Crypto {
    * @param s0 A {@link String} object, representing the {@link #abbreviation abbreviation}.
    * @param s1 A {@link String} object, representing the {@link #ageCategory age category}.
    * @param s2 A {@link String} object, representing the {@link #imageUrl image URL}.
+   * @see RaceGraphics
    */
   public RaceGraphics(GenderType gt, String s0, AgeCat s1, String s2) {
     genderType = gt;
