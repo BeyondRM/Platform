@@ -1,5 +1,5 @@
 package brm.platform.events.utility;
-import abc.cryptology.logics.ACryptoLogic;
+import abc.cryptology.logics.Crypto;
 import brm.platform.architecture.PlatformArchitecture;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -11,7 +11,7 @@ import java.io.IOException;
  * active map. It is used by the {@link MoveRoute} class in an array of orderly movement directions.
  * @author Gregory
  */
-public class MoveCommand extends ACryptoLogic {
+public class MoveCommand extends Crypto {
   /**
    * The movement command code.
    * @see MoveCommand

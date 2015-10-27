@@ -1,5 +1,5 @@
 package brm.platform.events.utility;
-import abc.cryptology.logics.ACryptoLogic;
+import abc.cryptology.logics.Crypto;
 import brm.platform.architecture.PlatformArchitecture;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -10,7 +10,7 @@ import java.io.IOException;
  * A movement route.
  * @author Gregory
  */
-public class MoveRoute extends ACryptoLogic {
+public class MoveRoute extends Crypto {
   public boolean repeat;
   public boolean skippable;
   public boolean wait;

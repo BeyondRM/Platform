@@ -1,5 +1,5 @@
 package brm.platform.races.race;
-import abc.cryptology.logics.ACryptoLogic;
+import abc.cryptology.logics.Crypto;
 import brm.platform.architecture.PlatformArchitecture;
 import brm.platform.races.enums.AgeCat;
 import brm.platform.races.enums.GenderType;
@@ -28,7 +28,7 @@ import java.util.List;
  * racial attributes in mind....
  * @author Gregory
  */
-public class Race extends ACryptoLogic {
+public class Race extends Crypto {
   private RaceGraphics[] graphics;
 
   public Race() {

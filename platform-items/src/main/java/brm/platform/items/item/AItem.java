@@ -1,5 +1,5 @@
 package brm.platform.items.item;
-import abc.cryptology.logics.ACryptoLogic;
+import abc.cryptology.logics.Crypto;
 import brm.platform.architecture.PlatformArchitecture;
 import brm.platform.architecture.database.AInformation;
 import brm.platform.architecture.database.InformationBasic;
@@ -14,7 +14,7 @@ import java.io.IOException;
  * the game database. It contains fields to centralize information, enumerations to define the item type, et cetera.
  * @author Gregory
  */
-abstract public class AItem extends ACryptoLogic {
+abstract public class AItem extends Crypto {
   /**
    * The item information.
    * @see AItem

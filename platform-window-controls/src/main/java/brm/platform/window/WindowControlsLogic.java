@@ -1,5 +1,5 @@
 package brm.platform.window;
-import abc.cryptology.logics.ACryptoLogic;
+import abc.cryptology.logics.Crypto;
 import brm.platform.architecture.PlatformArchitecture;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -10,7 +10,7 @@ import java.io.IOException;
  * Logic for loading window and control definitions.
  * @author Gregory
  */
-public class WindowControlsLogic extends ACryptoLogic {
+public class WindowControlsLogic extends Crypto {
   //TODO: Define the fields for various aspects of the windowing and component system....
   public String cipher;
   public String versions;

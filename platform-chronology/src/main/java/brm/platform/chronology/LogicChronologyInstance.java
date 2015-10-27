@@ -1,5 +1,5 @@
 package brm.platform.chronology;
-import abc.cryptology.logics.ACryptoLogic;
+import abc.cryptology.logics.Crypto;
 import brm.platform.architecture.PlatformArchitecture;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -12,7 +12,7 @@ import java.io.IOException;
  * writes those time values to the data stream.
  * @author Gregory
  */
-class LogicChronologyInstance extends ACryptoLogic {
+class LogicChronologyInstance extends Crypto {
   // the date values
   protected short currentDateYear;
   protected int currentDateMonth;

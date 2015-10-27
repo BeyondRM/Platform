@@ -1,5 +1,5 @@
 package brm.platform.window;
-import abc.cryptology.logics.ACryptoLogic;
+import abc.cryptology.logics.Crypto;
 import brm.platform.architecture.PlatformArchitecture;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -10,7 +10,7 @@ import java.io.IOException;
  * Window Font Definitions Logic.
  * @author Gregory
  */
-public class WindowFontDefsLogic extends ACryptoLogic {
+public class WindowFontDefsLogic extends Crypto {
   @Override
   public void performDecryption(DataInputStream dis) throws IOException {
   }

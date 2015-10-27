@@ -1,5 +1,5 @@
 package brm.platform.races.race;
-import abc.cryptology.logics.ACryptoLogic;
+import abc.cryptology.logics.Crypto;
 import brm.platform.architecture.PlatformArchitecture;
 import brm.platform.races.enums.AgeCat;
 import brm.platform.races.enums.GenderType;
@@ -12,7 +12,7 @@ import java.io.IOException;
  * The race-specific template graphics. Define basic template graphics for this race, by age, gender, or even sub-race.
  * @author Gregory
  */
-public class RaceGraphics extends ACryptoLogic {
+public class RaceGraphics extends Crypto {
   /**
    * The gender type. For most races, this is generally either "male" or "female" to specify the appearance. The female
    * individual generally has softer face and body features; the male generally has harsher or harder features, such as

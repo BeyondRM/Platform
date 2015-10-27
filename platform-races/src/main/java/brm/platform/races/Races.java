@@ -1,5 +1,5 @@
 package brm.platform.races;
-import abc.cryptology.logics.ACryptoLogic;
+import abc.cryptology.logics.Crypto;
 import brm.platform.architecture.PlatformArchitecture;
 import brm.platform.races.race.Race;
 import java.io.DataInputStream;
@@ -12,7 +12,7 @@ import java.io.IOException;
  * project build time (in editor only). It also allows creating
  * @author Gregory <gregory.cheyney@gmail.com>
  */
-public class Races extends ACryptoLogic {
+public class Races extends Crypto {
   private static transient final Race template;
 
   static {

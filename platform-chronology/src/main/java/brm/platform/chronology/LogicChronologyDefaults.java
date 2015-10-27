@@ -1,5 +1,5 @@
 package brm.platform.chronology;
-import abc.cryptology.logics.ACryptoLogic;
+import abc.cryptology.logics.Crypto;
 import brm.platform.architecture.PlatformArchitecture;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -12,7 +12,7 @@ import java.io.IOException;
  * instance of a game. Values never need to be written to a stream, because the defaults will not be modified.
  * @author Gregory
  */
-class LogicChronologyDefaults extends ACryptoLogic {
+class LogicChronologyDefaults extends Crypto {
   // the date values
   protected short dateBeginYear;
   protected int dateBeginMonth;
