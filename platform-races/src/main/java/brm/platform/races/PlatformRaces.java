@@ -4,7 +4,6 @@ import brm.platform.architecture.loadable.AModuleLoading;
 import brm.platform.architecture.loadable.progress.ProgressBar;
 import brm.platform.races.race.Race;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
@@ -21,7 +20,6 @@ import javax.crypto.NoSuchPaddingException;
  * must come from the game creator, made in the editor.
  * @author Gregory
  * @see #instance instance
- * @see #PlatformSpeciesPlatformRaces
  */
 public class PlatformRaces extends AModuleLoading {
   /**
