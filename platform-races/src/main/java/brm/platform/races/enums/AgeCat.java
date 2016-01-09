@@ -19,8 +19,13 @@ package brm.platform.races.enums;
  * ancient adult  - 80s++? a person venerated for accomplishments, age, knowledge
  * </pre> Not all of the above need include an image; they are merely listed for generalization. Anything up to
  * "adolescent" probably will not be characters in a game; and characters that are "elderly" or older will probably be
- * few and far between in a game, perhaps literally reserved for the few respected and venerated masters of their realm.
- * @author Gregory <gregory.cheyney@gmail.com>
+ * few and far between in a game, perhaps literally reserved for a few respected or "venerated" masters of their realm.
+ * <p/>
+ * Also, keep in mind, the "classic" console-based games often had a somewhat skewed representation of ages. Heroes are
+ * generally among the pre-teen, teen/adolescent, and post-teen ages &mdash; adults, and older characters, often become
+ * either mentors, merchants and support characters, or "obstacle characters" of some kind (up to and including primary
+ * bosses/opponent(s) and their lieutenants).
+ * @author Gregory
  */
 public enum AgeCat {
   /**
@@ -70,32 +75,58 @@ public enum AgeCat {
    */
   ac4,
   /**
-   * Age is "early adult".
+   * Age is "early adult". Very much like {@link #ac4 ac4}, but generally as characters that are on their way to being
+   * considered a legitimate adult; often, these are the hero's friends, that may be two or three years older. If named
+   * adolescent heroes are in the middle of their high-school years, then this age category is for a senior class-mate.
+   * <p/>
+   * For a classic RPG, these early adults are often the young soldier NPC that might wander around their guard points,
+   * the typical man or woman shopper NPC in merchant's shops, and assorted other appearances.
    * @see AgeCat
    */
   ac5,
   /**
-   * Age is "middle adult".
+   * Age is "middle adult". These are adults which are generally settled in life, either a lesser-noted adventurer from
+   * a local area, a merchant, or even a parental NPC. The notable "Harvest Moon" series of games have several mothers
+   * who gather in the "town square to chat every day.
+   * <p/>
+   * Should a middle-aged adult appear as a recruitable member, he/she is likely a mentor-figure that can fight, and do
+   * so quite well, but in some cases their joining a party is temporary, due to the long-term overpowering effects.
    * @see AgeCat
    */
   ac6,
   /**
-   * Age is "mature adult".
+   * Age is "mature adult". Very much like the {@link #ac6 ac6} "middle-aged adult", these adults are quite a bit more
+   * mature than their younger fellows. If these were parent NPC individuals, then their children are likely old enough
+   * to be the hero's age as well, or perhaps barely older; but the parent is typically not a "grandparent", yet. Often
+   * people at this age in villages were once adventurers themselves, who left the dangers behind, for the certainty of
+   * owning their own home and maintaining their own family.
+   * <p/>
+   * On the adventurers side of things, an adult recruitable character of this age is more likely a respected or feared
+   * magician or wizard; or someone who has a technical proficiency for some task, lent to the heroic-party for a brief
+   * period of time, such as to accomplish a specific task or defeat a particular opponent (and sometimes the backstory
+   * for such a character would include reasons for their being the one to do it).
    * @see AgeCat
    */
   ac7,
   /**
-   * Age is "elder adult".
+   * Age is "elder adult". These are people of "grandparent" age; they have lived life to the full, but are by no means
+   * done living. They may hold a wealth of knowledge within their brains, they might be considered affluent or wealthy
+   * in the way of owning assets or property, and they may even have specific lines of dialog for the players. Or, not;
+   * they could just as well be a "flavor NPC", merely a wandering old gentleman or woman to fill up empty scenery.
    * @see AgeCat
    */
   ac8,
   /**
-   * Age is "ancient adult".
+   * Age is "ancient adult". The game character of this age is so old, he or she is so far beyond a typical grandparent
+   * character; they are extremely long-lived, and perhaps in some respects may expect their own death to come. (In one
+   * indie RPG Maker game, Homework Salesman, an elderly character *does* die, and results in a new character taking up
+   * the family business).
    * @see AgeCat
    */
   ac9,
   /**
-   * Age is "immortal".
+   * Age is "immortal". This is very infrequently encountered, except for terms of the game's villains, or of a variety
+   * of deities, or of all sorts of "undead" characters.
    * @see AgeCat
    */
   acA;

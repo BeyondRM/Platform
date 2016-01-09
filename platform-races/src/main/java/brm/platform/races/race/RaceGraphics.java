@@ -18,7 +18,7 @@ public class RaceGraphics extends Crypto {
    * individual generally has softer face and body features; the male generally has harsher or harder features, such as
    * more developed musculature, facial hair (beards, mustaches), and a tendency to go bald as age progresses.
    * <p/>
-   * A race's gender-types may contain neuter as well as hermaphrodite pseudo-genders. The former case, gender-neutral,
+   * The race gender-types may contain neuter as well as hermaphrodite pseudo-genders. The former case, gender-neutral,
    * is useful for non-reproducing members such as in hive-colonies of drones supporting a queen or hierarchy; a latter
    * case of hermaphroditism may still be biologically (genetically speaking) predisposed to be either males or females
    * of this race, with perhaps a bias to being whichever gender-features are more prominent (unless surgical selection

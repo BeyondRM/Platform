@@ -10,7 +10,7 @@ import java.io.IOException;
 /**
  * The platform's races list. This class handles the logic of reading the races-index (in game) and writing the same at
  * project build time (in editor only).
- * @author Gregory <gregory.cheyney@gmail.com>
+ * @author Gregory
  */
 public class Races extends Crypto {
   /**
