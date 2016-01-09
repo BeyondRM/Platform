@@ -6,7 +6,7 @@ import java.util.MissingResourceException;
 /**
  * A vocabulary instance of per-ID tracked values. This class is useful to use if desiring to keep "global" strings in
  * memory during a game; such as for the menu and scene strings that may be needed at any time.
- * @author Gregory <gregory.cheyney@gmail.com>
+ * @author Gregory
  */
 abstract public class VocabPerId extends Vocab {
   /**

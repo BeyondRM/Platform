@@ -20,7 +20,7 @@ import java.io.IOException;
  * index into the musical lists for the background music and three sound effects. The background music is a generalized
  * "traveling music" that plays as the vehicle is moving. The sound effects are for the leaving (take-off), moving, and
  * landing (stopping) actions; only the moving operation is repeatable for the duration of the journey.
- * @author Gregory <gregory.cheyney@gmail.com>
+ * @author Gregory
  * @see CryptoReader
  * @see #i18n i18n
  * @see #name name

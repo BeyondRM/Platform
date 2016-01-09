@@ -5,7 +5,7 @@ import java.util.MissingResourceException;
 
 /**
  * A basic vocabulary instance.
- * @author Gregory <gregory.cheyney@gmail.com>
+ * @author Gregory
  */
 public class VocabBasic extends Vocab {
   public VocabBasic(String s) {

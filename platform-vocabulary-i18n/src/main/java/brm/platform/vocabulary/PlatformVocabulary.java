@@ -8,7 +8,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Platform Vocabulary management. This singleton class handles the internationalization of textual data for the game.
- * @author Gregory <gregory.cheyney@gmail.com>
+ * @author Gregory
  * @see #instance instance
  * @see #PlatformVocabulary() PlatformVocabulary()
  */

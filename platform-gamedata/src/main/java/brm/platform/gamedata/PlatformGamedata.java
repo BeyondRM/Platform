@@ -3,7 +3,7 @@ package brm.platform.gamedata;
 
 /**
  * The platform static data.
- * @author Gregory <gregory.cheyney@gmail.com>
+ * @author Gregory
  * @see #instance instance
  * @see #PlatformGamedata() PlatformGamedata()
  */

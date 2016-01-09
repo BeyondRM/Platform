@@ -7,7 +7,7 @@ import java.util.ResourceBundle;
 /**
  * A vocabulary definition. This abstract class is used to manage localization of text objects among platform or engine
  * modules in a controlled manner. It allows a game player to set or reset the locale for internationalization.
- * @author Gregory <gregory.cheyney@gmail.com>
+ * @author Gregory
  */
 abstract public class Vocab {
   /**
