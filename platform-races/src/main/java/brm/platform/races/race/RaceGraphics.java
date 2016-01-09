@@ -23,6 +23,7 @@ public class RaceGraphics extends Crypto {
    * case of hermaphroditism may still be biologically (genetically speaking) predisposed to be either males or females
    * of this race, with perhaps a bias to being whichever gender-features are more prominent (unless surgical selection
    * could override this &mdash; not something the typical RPG will deal with, though). See Wikipedia for more details.
+   * @see RaceGraphics
    */
   private GenderType genderType;
   /**
@@ -37,6 +38,7 @@ public class RaceGraphics extends Crypto {
    * An abbreviation is only used in the editor to help identify which graphic to use, either for character generation,
    * or for in-game encyclopedic lore; it is replaced with an ordinal reference if it is to be included in the game, at
    * all&hellip;.
+   * @see RaceGraphics
    */
   private String abbreviation;
   /**
@@ -91,7 +93,7 @@ public class RaceGraphics extends Crypto {
   }
 
   @Override
-  public void performDecryption(DataInputStream dis) throws IOException {
+  public final void performDecryption(DataInputStream dis) throws IOException {
     if(!PlatformArchitecture.mode.devOnly) {
       byte b;
       String s;
@@ -117,7 +119,7 @@ public class RaceGraphics extends Crypto {
   }
 
   @Override
-  public void performEncryption(DataOutputStream dos) throws IOException {
+  public final void performEncryption(DataOutputStream dos) throws IOException {
     if(PlatformArchitecture.mode.devOnly) {
       dos.writeByte(genderType.name.length());
       dos.writeChars(genderType.name);
@@ -127,19 +129,39 @@ public class RaceGraphics extends Crypto {
     }
   }
 
-  public GenderType getGenderType() {
-    return genderType;
-  }
-
-  public String getAbbreviation() {
-    return abbreviation;
-  }
-
-  public AgeCat getAgeCategory() {
+  /**
+   * Get the age category.
+   * @return An {@link AgeCat} instance.
+   * @see RaceGraphics
+   */
+  public final AgeCat getAgeCategory() {
     return ageCategory;
   }
 
-  public String getImageUrl() {
+  /**
+   * Get the gender type.
+   * @return A {@link GenderType} instance.
+   * @see RaceGraphics
+   */
+  public final GenderType getGenderType() {
+    return genderType;
+  }
+
+  /**
+   * Get the abbreviation.
+   * @return A {@link String} object.
+   * @see RaceGraphics
+   */
+  public final String getAbbreviation() {
+    return abbreviation;
+  }
+
+  /**
+   * Get the image URL.
+   * @return A {@link String} object.
+   * @see RaceGraphics
+   */
+  public final String getImageUrl() {
     return imageUrl;
   }
 }

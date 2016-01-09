@@ -4,6 +4,7 @@ import brm.platform.architecture.loadable.AModuleLoading;
 import brm.platform.architecture.loadable.progress.ProgressBar;
 import brm.platform.races.race.Race;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;

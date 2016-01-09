@@ -45,7 +45,7 @@ public class Race extends Crypto {
   }
 
   @Override
-  public void performDecryption(DataInputStream dis) throws IOException {
+  public synchronized final void performDecryption(DataInputStream dis) throws IOException {
     if(!PlatformArchitecture.mode.devOnly) {
       int i = dis.readByte();
       graphics = new RaceGraphics[i];
@@ -57,7 +57,7 @@ public class Race extends Crypto {
   }
 
   @Override
-  public void performEncryption(DataOutputStream dos) throws IOException {
+  public synchronized final void performEncryption(DataOutputStream dos) throws IOException {
     if(PlatformArchitecture.mode.devOnly) {
       dos.writeByte(graphics.length);
       for(RaceGraphics rg : graphics) {
@@ -66,25 +66,72 @@ public class Race extends Crypto {
     }
   }
 
-  public final RaceGraphics[] getGraphics(GenderType gt) {
-    List<RaceGraphics> rg = new ArrayList<>(0);
-    for(RaceGraphics rg1 : graphics) {
-      if(rg1.getGenderType() == gt) {
-        rg.add(rg1);
-      }
-    }
-    //TODO: This method should return an array of graphics from the gender classification.
-    return rg.isEmpty() ? null : (RaceGraphics[])rg.toArray();
+  /**
+   * Get a race graphics array. This returns ALL graphics, as a cloned array of the {@code graphics} field.
+   * @return A {@link RaceGraphics} array.
+   * @see Race
+   * @see #graphics graphics
+   * @see RaceGraphics
+   */
+  public synchronized final RaceGraphics[] getGraphics() {
+    return graphics.clone();
   }
 
-  public final RaceGraphics[] getGraphics(byte b) {
-    List<RaceGraphics> rg = new ArrayList<>(0);
-    for(RaceGraphics rg1 : graphics) {
-      if(rg1.getAgeCategory() == AgeCat.fromId(b)) {
-        rg.add(rg1);
+  /**
+   * Get a race graphics array. This returns a sublist of the graphics, selected by age category only.
+   * @param b A {@link Byte} value, representing an age category to find.
+   * @return A {@link RaceGraphics} array.
+   * @see ArrayList
+   * @see List
+   * @see Race
+   * @see RaceGraphics
+   */
+  public synchronized final RaceGraphics[] getGraphics(byte b) {
+    List<RaceGraphics> list = new ArrayList<>(0);
+    for(RaceGraphics rg : graphics) {
+      if(rg.getAgeCategory() == AgeCat.fromId(b)) {
+        list.add(rg);
       }
     }
-    //TODO: This method should return an array of graphics from the age-category index.
-    return rg.isEmpty() ? null : (RaceGraphics[])rg.toArray();
+    return list.isEmpty() ? null : (RaceGraphics[])list.toArray();
+  }
+
+  /**
+   * Get a race graphics array. This returns a sublist of the graphics, selected by age category and gender type.
+   * @param g A {@link GenderType} instance, representing a gender type to find.
+   * @param b A {@link Byte} value, representing an age category to find.
+   * @return A {@link RaceGraphics} array.
+   * @see ArrayList
+   * @see List
+   * @see Race
+   * @see RaceGraphics
+   */
+  public synchronized final RaceGraphics[] getGraphics(byte b, GenderType g) {
+    List<RaceGraphics> list = new ArrayList<>(0);
+    for(RaceGraphics rg : graphics) {
+      if(rg.getGenderType() == g && rg.getAgeCategory() == AgeCat.fromId(b)) {
+        list.add(rg);
+      }
+    }
+    return list.isEmpty() ? null : (RaceGraphics[])list.toArray();
+  }
+
+  /**
+   * Get a race graphics array. This returns a sublist of the graphics, selected by gender type only.
+   * @param g A {@link GenderType} instance, representing a gender type to find.
+   * @return A {@link RaceGraphics} array.
+   * @see ArrayList
+   * @see List
+   * @see Race
+   * @see RaceGraphics
+   */
+  public synchronized final RaceGraphics[] getGraphics(GenderType g) {
+    List<RaceGraphics> list = new ArrayList<>(0);
+    for(RaceGraphics rg : graphics) {
+      if(rg.getGenderType() == g) {
+        list.add(rg);
+      }
+    }
+    return list.isEmpty() ? null : (RaceGraphics[])list.toArray();
   }
 }
