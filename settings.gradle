@@ -1,5 +1,7 @@
 //
+rootProject.name='BeyondRM Platform'
 include\
+':platform',\
 ':platform-architecture',\
 ':platform-chronology',\
 ':platform-events',\
@@ -10,5 +12,6 @@ include\
 ':platform-maps',\
 ':platform-media-sounds',\
 ':platform-races',\
+':platform-system',\
 ':platform-vocabulary-i18n',\
 ':platform-window-controls'

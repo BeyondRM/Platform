@@ -5,9 +5,9 @@ apply plugin: 'maven'
 String mavenGroupId = rootProject.group
 String mavenVersion = rootProject.version
 
-sourceCompatibility = '1.8'
-targetCompatibility = '1.8'
-[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+sourceCompatibility='1.8'
+targetCompatibility='1.8'
+[compileJava, compileTestJava]*.options*.encoding='UTF-8'
 
 repositories {
   mavenLocal()
