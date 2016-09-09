@@ -1,5 +1,8 @@
 package brm.platform.items.item;
-import brm.platform.items.enums.ItemType;
+import brm.platform.architecture.PlatformArchitecture;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
 
 
 /**
@@ -9,9 +12,14 @@ import brm.platform.items.enums.ItemType;
  * in some fashion, and the player wants to restore the character to a better status.
  * @author Gregory
  */
-public class ConsumedMedicine extends AItemConsumed {
+public class ItemConsumableMedicine extends ItemConsumable {
+  public ItemConsumableMedicine(DataInputStream dis) throws IOException {
+    super(dis);
+  }
 
-  public ConsumedMedicine() {
-    super(ItemType.it00);
+  @Override
+  public synchronized void performEncryption(DataOutputStream dos) throws IOException {
+    if(PlatformArchitecture.mode.devOnly) {
+    }
   }
 }
