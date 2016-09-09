@@ -23,14 +23,14 @@ abstract public class Vocab {
    * This should only be set in the constructor, and does not need to be returned in any method.
    * @see Vocab
    */
-  protected transient ResourceBundle bundle;
+  protected transient Locale locale;
   /**
    * The resource bundle instance. This is the resource bundle which is used to obtain localized texts.
    * <p/>
    * This should only be set in the constructor, and does not need to be returned in any method.
    * @see Vocab
    */
-  protected transient Locale locale;
+  protected transient ResourceBundle bundle;
 
   /**
    * A public constructor. This takes a String path and loads the target resource bundle.
@@ -65,6 +65,15 @@ abstract public class Vocab {
    * @throws NullPointerException     if the base name or the locale are null.
    */
   abstract public void resetLocale(Locale l) throws MissingResourceException, NullPointerException;
+
+  /**
+   * Get the resource bundle.
+   * @return A {@link ResourceBundle} object.
+   * @see Vocab
+   */
+  protected final ResourceBundle getBundle() {
+    return bundle;
+  }
 
   /**
    * Set the locale and reset the bundle. This method is declared protected and final, meaning it cannot be overridden;

@@ -1,5 +1,8 @@
 package brm.platform.vocabulary;
+import brm.platform.architecture.loadable.Loadable;
+import brm.platform.architecture.loadable.progress.ProgressBar;
 import brm.platform.vocabulary.instance.Vocab;
+import java.io.File;
 import java.util.Locale;
 import java.util.Map;
 import java.util.ResourceBundle;
@@ -12,7 +15,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * @see #instance instance
  * @see #PlatformVocabulary() PlatformVocabulary()
  */
-public class PlatformVocabulary {
+public final class PlatformVocabulary extends Loadable {
   /**
    * The default instance.
    * @see PlatformVocabulary
@@ -46,13 +49,48 @@ public class PlatformVocabulary {
   private PlatformVocabulary() {
   }
 
+  @Override
+  public boolean isDataLoaded() {
+    return dataLoaded;
+  }
+
+  @Override
+  public boolean isDataValidated() {
+    return dataValidated;
+  }
+
+  @Override
+  public int getInitializedCount() {
+    return initializedCount;
+  }
+
+  @Override
+  public void beforeInitialization(long l, File f, String s) {
+  }
+
+  @Override
+  public void initializeBefore(ProgressBar pb) {
+  }
+
+  @Override
+  public void initializeDuring(ProgressBar pb) {
+  }
+
+  @Override
+  public void initializeFinish(ProgressBar pb) {
+  }
+
+  @Override
+  public void validation() {
+  }
+
   /**
    * Get a vocabulary object.
    * @param s A {@link String} object, representing a map key.
    * @return A {@link Vocab} object.
    * @see PlatformVocabulary
    */
-  public synchronized final Vocab getVocab(String s) {
+  public synchronized Vocab getVocab(String s) {
     return (!s.isEmpty() && map.containsKey(s)) ? map.get(s) : null;
   }
 
@@ -62,7 +100,7 @@ public class PlatformVocabulary {
    * @param v A {@link Vocab} object, representing a vocabulary.
    * @see PlatformVocabulary
    */
-  public synchronized final void addVocab(String s, Vocab v) {
+  public synchronized void addVocab(String s, Vocab v) {
     if(!s.isEmpty() && !map.containsKey(s) && v != null) {
       map.put(s, v);
     }
@@ -73,7 +111,7 @@ public class PlatformVocabulary {
    * @param s A {@link String} object, representing a map key.
    * @see PlatformVocabulary
    */
-  public synchronized final void delVocab(String s) {
+  public synchronized void delVocab(String s) {
     if(!s.isEmpty() && map.containsKey(s)) {
       map.remove(s);
     }
@@ -87,7 +125,7 @@ public class PlatformVocabulary {
    * @see Vocab
    * @see Vocab#resetLocale(Locale)
    */
-  public synchronized final void setLocale(Locale l) {
+  public synchronized void setLocale(Locale l) {
     if(l != null) {
       ResourceBundle.clearCache();
       for(Map.Entry<String, Vocab> entry : map.entrySet()) {
