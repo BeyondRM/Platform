@@ -1,6 +1,6 @@
 package brm.platform.races;
 import abc.cryptology.AbcCryptology;
-import brm.platform.architecture.loadable.AModuleLoading;
+import brm.platform.architecture.loadable.Loadable;
 import brm.platform.architecture.loadable.progress.ProgressBar;
 import brm.platform.races.race.Race;
 import java.io.File;
@@ -21,7 +21,7 @@ import javax.crypto.NoSuchPaddingException;
  * @author Gregory
  * @see #instance instance
  */
-public class PlatformRaces extends AModuleLoading {
+public final class PlatformRaces extends Loadable {
   /**
    * The default {@link PlatformRaces} instance.
    */
@@ -37,22 +37,22 @@ public class PlatformRaces extends AModuleLoading {
   }
 
   @Override
-  public final boolean isDataLoaded() {
+  public boolean isDataLoaded() {
     return dataLoaded;
   }
 
   @Override
-  public final boolean isDataValidated() {
+  public boolean isDataValidated() {
     return dataValidated;
   }
 
   @Override
-  public final int getInitializedCount() {
+  public int getInitializedCount() {
     return initializedCount;
   }
 
   @Override
-  public final void beforeInitialization(long l, File f, String s) {
+  public void beforeInitialization(long l, File f, String s) {
     try {
       AbcCryptology.instance.performDecryption(l, races, s, f, "PBEWithMD5AndDES");
     } catch(NoSuchAlgorithmException | InvalidKeySpecException | NoSuchPaddingException | InvalidKeyException | InvalidAlgorithmParameterException | IOException ex) {
@@ -61,22 +61,22 @@ public class PlatformRaces extends AModuleLoading {
   }
 
   @Override
-  public final void initializeBefore(ProgressBar pb) {
+  public void initializeBefore(ProgressBar pb) {
   }
 
   @Override
-  public final void initializeDuring(ProgressBar pb) {
+  public void initializeDuring(ProgressBar pb) {
   }
 
   @Override
-  public final void initializeFinish(ProgressBar pb) {
+  public void initializeFinish(ProgressBar pb) {
   }
 
   @Override
-  public final void validation() {
+  public void validation() {
   }
 
-  public final Race getRace(int i) {
+  public Race getRace(int i) {
     return races.race[i];
   }
 }

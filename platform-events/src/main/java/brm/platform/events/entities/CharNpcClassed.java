@@ -2,8 +2,7 @@ package brm.platform.events.entities;
 
 
 /**
- * <h2>CharNpcClassed</h2>
- * something
+ * A classed NPC.
  * @author Gregory
  */
 public class CharNpcClassed extends CharNpc {

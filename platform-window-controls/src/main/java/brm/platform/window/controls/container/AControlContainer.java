@@ -11,4 +11,8 @@ import brm.platform.window.controls.AControl;
  * @author Gregory
  */
 abstract public class AControlContainer extends AControl {
+
+  public AControlContainer(boolean b, double x, double y, double w, double h) {
+    super(b, x, y, w, h);
+  }
 }

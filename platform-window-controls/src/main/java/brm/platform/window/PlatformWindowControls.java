@@ -1,6 +1,6 @@
 package brm.platform.window;
 import abc.cryptology.AbcCryptology;
-import brm.platform.architecture.loadable.AModuleLoading;
+import brm.platform.architecture.loadable.Loadable;
 import brm.platform.architecture.loadable.progress.ProgressBar;
 import java.io.File;
 import java.io.IOException;
@@ -16,7 +16,7 @@ import javax.crypto.NoSuchPaddingException;
 /**
  * The platform's window controls. This singleton class allows defining various windows and components in a system-wide
  * manner.
- * <p/>
+ * <p>
  * With this module, we wish to allow customizing of the window-skins for our game-system. The "skin" is essentially an
  * image collection that can be parsed and applied to various visual elements of a game's interface. This includes some
  * images for decoration (fancy borders and backgrounds) of windows and components, "image fonts" from parsed graphics,
@@ -33,26 +33,26 @@ import javax.crypto.NoSuchPaddingException;
  * for the graphical system as a whole, and the images that are used for the components. Component graphics are parsed,
  * providing a visual element's background graphic, and any component decorations. This includes any window borders and
  * highlights that give the visual component a little appeal.
- * <p/>
+ * <p>
  * Windows are a "container"-type component that can hold multiple child components in a complex layout. While drawing,
  * the container will iteratively draw each element contained within it.
  * <h2>Custom Graphical Fonts.</h2>
  * While we can still use the known "TrueType" fonts for text, we also can supply customized fonts from graphic images,
  * in a form that can be parsed for each letter-graphic. A game-system can have as many graphical fonts as is necessary
  * to give it an appealing display of text.
- * <p/>
+ * <p>
  * On one hand, we have the tile-sheet of font characters, to be parsed into individual characters. This is easy enough
  * to do at engine-initialization, without much extra processor-overhead. On the other hand, each font also has a file,
  * encoded with the layout for each character in the font, such as "letter kerning" &mdash; the character width and how
  * much space to place between characters, whether to use shadow-effects, highlights, coloring, and other properties.
- * <p/>
+ * <p>
  * The module that handles messages and textual layout can then use the above to make composite graphical lines of text
  * and then display them.
  * <h2>Additional Things.</h2>
  * The additional "goodies" may include combined window components (such as the "party gold" layout of visual elements)
  * that can themselves be used in other windows or visual layouts. It is meant to simplify the development of beautiful
  * menu screens, screen overlays, and general visual layout.
- * <p/>
+ * <p>
  * In many of the traditional "RPG Maker"-branded games, the window layouts could possibly contain visual parts easily
  * defined in common and shared across one or more "window" elements. A prime example might be a hero's HP, MP, and TP,
  * all attributes that each character could be displaying.
@@ -60,7 +60,7 @@ import javax.crypto.NoSuchPaddingException;
  * @see #instance instance
  * @see #PlatformWindowControls() PlatformWindowControls()
  */
-public class PlatformWindowControls extends AModuleLoading {
+public final class PlatformWindowControls extends Loadable {
   /**
    * The default {@link PlatformWindowControls} instance.
    * @see #PlatformWindowControls

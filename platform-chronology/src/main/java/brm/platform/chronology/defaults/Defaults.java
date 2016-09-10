@@ -18,7 +18,7 @@ import java.util.logging.Logger;
  */
 public class Defaults {
   /**
-   * The default {@link Defaults} instance.
+   * The default instance.
    */
   public static final Defaults instance;
 

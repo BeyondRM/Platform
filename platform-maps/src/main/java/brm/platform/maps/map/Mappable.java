@@ -1,6 +1,7 @@
 package brm.platform.maps.map;
 import abc.cryptology.logics.Crypto;
 import brm.platform.architecture.PlatformArchitecture;
+import brm.platform.maps.util.MapMedia;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -11,54 +12,6 @@ import java.io.IOException;
  * @author Gregory
  */
 abstract public class Mappable extends Crypto {
-  protected static class  MappableMedias extends Crypto {
-    /**
-     * The background music.
-     * @see MappableMedias
-     */
-    public Object bgm; // originally uses RGSS class BGM
-    /**
-     * The background sound.
-     * @see MappableMedias
-     */
-    public Object bgs; // originally uses RGSS class BGS
-    /**
-     * Whether BGM auto-plays.
-     * @see MappableMedias
-     */
-    public boolean autoplay_bgm;
-    /**
-     * Whether BGM auto-plays.
-     * @see MappableMedias
-     */
-    public boolean autoplay_bgs;
-
-    {
-      autoplay_bgm = false;
-      autoplay_bgs = false;
-      bgm = null;
-      bgs = null;
-    }
-
-    @Override
-    public void performDecryption(DataInputStream dis) throws IOException {
-      if(!PlatformArchitecture.mode.devOnly && dis != null) {
-        autoplay_bgm = dis.readBoolean();
-        autoplay_bgs = dis.readBoolean();
-        // then, read the bgm and bgs properties...
-      }
-    }
-
-    @Override
-    public void performEncryption(DataOutputStream dos) throws IOException {
-      if(PlatformArchitecture.mode.devOnly && dos != null) {
-        dos.writeBoolean(autoplay_bgm);
-        dos.writeBoolean(autoplay_bgs);
-        // then, write the bgm and bgs properties...
-      }
-    }
-  }
-
   /**
    * The default name. Game progress could change the map name; this is overridden in the engine's map class....
    * @see Mappable
@@ -82,7 +35,7 @@ abstract public class Mappable extends Crypto {
   /**
    * The scrolling type. This controls whether a map is looped when a character comes to an edge; possible values are:
    * no loop, loop vertical, loop horizontal, or loop both. (We could make this an enumeration instance...)
-   * <p/>
+   * <p>
    * 0: no loop; 1: loop vertical; 2: loop horizontal; 3: loop both;
    * @see Mappable
    */
@@ -162,6 +115,7 @@ abstract public class Mappable extends Crypto {
    * @see Mappable
    */
   public Object[] events; // originally an Event[] object
+  private MapMedia media;
 
   {
     display_name = "";
@@ -171,7 +125,7 @@ abstract public class Mappable extends Crypto {
     battleback1_name = ""; // the floor graphic
     battleback2_name = ""; // the wall graphic
     // autoplay and sound objects moved into class MappableMedias
-    MappableMedias medias = new MappableMedias();
+    media = new MapMedia();
     disable_dashing = false;
     encounter_list = new Object[64]; // originally an Encounter[] object
     encounter_step = 30;
@@ -198,10 +152,14 @@ abstract public class Mappable extends Crypto {
   }
 
   @Override
-  public void performDecryption(DataInputStream dis) throws IOException {
+  public synchronized final void performDecryption(DataInputStream dis) throws IOException {
+    if(!PlatformArchitecture.mode.devOnly) {
+    }
   }
 
   @Override
-  public void performEncryption(DataOutputStream dos) throws IOException {
+  public synchronized final void performEncryption(DataOutputStream dos) throws IOException {
+    if(PlatformArchitecture.mode.devOnly) {
+    }
   }
 }

@@ -2,8 +2,7 @@ package brm.platform.events.entities;
 
 
 /**
- * <h2>CharNpc</h2>
- * something
+ * An NPC.
  * @author Gregory
  */
 public class CharNpc extends AMapEntityChar {

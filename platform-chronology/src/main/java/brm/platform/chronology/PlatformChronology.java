@@ -1,6 +1,6 @@
 package brm.platform.chronology;
 import abc.cryptology.AbcCryptology;
-import brm.platform.architecture.loadable.AModuleLoading;
+import brm.platform.architecture.loadable.Loadable;
 import brm.platform.architecture.loadable.progress.ProgressBar;
 import brm.platform.chronology.calendar.CalendarDefinition;
 import java.io.File;
@@ -24,7 +24,7 @@ import javax.crypto.NoSuchPaddingException;
  * @see #instance instance
  * @see #PlatformChronology PlatformChronology
  */
-public class PlatformChronology extends AModuleLoading {
+public final class PlatformChronology extends Loadable {
   /**
    * The default {@link PlatformChronology} instance.
    */
@@ -112,8 +112,8 @@ public class PlatformChronology extends AModuleLoading {
   }
 
   public void setCalendarDefinition(String s) {
-    //TODO: This should implement a setter methodology to set the calendarDefinition field. The object this is set to,
-    // may likely come from a static method in the CalendarDefinition class.
+    //TODO: This should implement a setter methodology to set the calendarDefinition field.
+    // The object that this is set to, may likely come from a static method in the CalendarDefinition class.
   }
 
   public void update() {

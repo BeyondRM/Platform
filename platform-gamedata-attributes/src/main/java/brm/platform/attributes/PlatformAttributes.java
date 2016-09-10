@@ -2,7 +2,7 @@ package brm.platform.attributes;
 import abc.cryptology.AbcCryptology;
 import abc.cryptology.logics.Crypto;
 import brm.platform.architecture.PlatformArchitecture;
-import brm.platform.architecture.loadable.AModuleLoading;
+import brm.platform.architecture.loadable.Loadable;
 import brm.platform.architecture.loadable.progress.ProgressBar;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -21,7 +21,7 @@ import javax.crypto.NoSuchPaddingException;
  * The platform attributes handler. This provides for managing the attribute classes and attributes lists; the database
  * objects which implement attributes (such as for items) must also handle attribute properties in combat, crafting, or
  * other scenes.
- * <p/>
+ * <p>
  * Attributes can be used in so many ways. In combat, one attribute may ablate or repel another attribute; so, incoming
  * damage values may need to be adjusted, based upon natural diminishing factors. In crafting, ingredients holding some
  * attributes could cause greater or lesser qualities or quantities of a finished product, along with a character's own
@@ -31,7 +31,7 @@ import javax.crypto.NoSuchPaddingException;
  * all the miscellaneous race data.)
  * @author Gregory
  */
-public class PlatformAttributes extends AModuleLoading {
+public final class PlatformAttributes extends Loadable {
   /**
    * The default instance.
    * @see PlatformAttributes
@@ -66,27 +66,27 @@ public class PlatformAttributes extends AModuleLoading {
   }
 
   @Override
-  public synchronized final boolean isDataLoaded() {
+  public synchronized boolean isDataLoaded() {
     return dataLoaded;
   }
 
   @Override
-  public synchronized final boolean isDataValidated() {
+  public synchronized boolean isDataValidated() {
     return dataValidated;
   }
 
   @Override
-  public synchronized final int getInitializedCount() {
+  public synchronized int getInitializedCount() {
     return initializedCount;
   }
 
   @Override
-  public synchronized final void beforeInitialization(long l, File f, String s) {
+  public synchronized void beforeInitialization(long l, File f, String s) {
     sourcePath = f;
   }
 
   @Override
-  public synchronized final void initializeBefore(ProgressBar pb) {
+  public synchronized void initializeBefore(ProgressBar pb) {
     boolean b = sourcePath.exists() && sourcePath.isFile() && sourcePath.canRead();
     if(!b) {
       //TODO: Throw an error message; something may be wrong....
@@ -94,7 +94,7 @@ public class PlatformAttributes extends AModuleLoading {
   }
 
   @Override
-  public synchronized final void initializeDuring(ProgressBar pb) {
+  public synchronized void initializeDuring(ProgressBar pb) {
     pb.reset(0, null);
     if(loader == null) {
       loader = new AttributeLoader(pb);
@@ -112,7 +112,7 @@ public class PlatformAttributes extends AModuleLoading {
   }
 
   @Override
-  public synchronized final void initializeFinish(ProgressBar pb) {
+  public synchronized void initializeFinish(ProgressBar pb) {
     if(dataLoaded) {
       for(AttributeClass ac : attclass) {
         if(!ac.valid()) {
@@ -135,7 +135,7 @@ public class PlatformAttributes extends AModuleLoading {
   }
 
   @Override
-  public synchronized final void validation() {
+  public synchronized void validation() {
     boolean valid = true;
     for(AttributeClass lac : attclass) {
       valid &= !lac.getAbbr().isEmpty() && !lac.getName().isEmpty();
@@ -158,7 +158,7 @@ public class PlatformAttributes extends AModuleLoading {
    * @return A {@link Attribute} object.
    * @see PlatformAttributes
    */
-  public synchronized final Attribute getAttribute() {
+  public synchronized Attribute getAttribute() {
     int i = (int)(Math.random() * attributes.length);
     return attributes[i];
   }
@@ -169,7 +169,7 @@ public class PlatformAttributes extends AModuleLoading {
    * @return A {@link Attribute} object.
    * @see PlatformAttributes
    */
-  public synchronized final Attribute getAttribute(int i) {
+  public synchronized Attribute getAttribute(int i) {
     int index = i;
     if(index < 0) {
       index = 0;
@@ -185,7 +185,7 @@ public class PlatformAttributes extends AModuleLoading {
    * @return A {@link AttributeClass} object.
    * @see PlatformAttributes
    */
-  public synchronized final AttributeClass getAttributeClass(int i) {
+  public synchronized AttributeClass getAttributeClass(int i) {
     if(i >= 0 && i < attclass.length) {
       return attclass[i];
     } else {
@@ -215,7 +215,7 @@ public class PlatformAttributes extends AModuleLoading {
    * @see #getAttributes() getAttributes()
    * @see #getClasses() getClasses()
    */
-  static final class AttributeLoader extends Crypto {
+  private static final class AttributeLoader extends Crypto {
     /**
      * The progress bar.
      */
@@ -323,7 +323,7 @@ public class PlatformAttributes extends AModuleLoading {
 
     /**
      * Get the attributes.
-     * <p/>
+     * <p>
      * This depends upon the decryption method having been run to read the binary files.
      * @return An {@link Attribute} array.
      */
@@ -333,7 +333,7 @@ public class PlatformAttributes extends AModuleLoading {
 
     /**
      * Get the attribute classes.
-     * <p/>
+     * <p>
      * This depends upon the decryption method having been run to read the binary files.
      * @return An {@link AttributeClass} array.
      */

@@ -55,7 +55,7 @@ public enum ItemType {
   it00, // consumable medicine
   /**
    * A consumable seed. This item is something that increases a character's single statistic or parameter by an amount.
-   * <p/>
+   * <p>
    * The "seed" does not equate to a plantable entity, because this is something consumed, and plantable objects cannot
    * typically; see something else entirely.
    * @see ItemType
@@ -64,7 +64,7 @@ public enum ItemType {
   /**
    * A consumable skill-book. This item is essentially a learnable skill instance; if the character using it is allowed
    * to learn the contained skill, this skill book will be consumed and the character will learn the skill.
-   * <p/>
+   * <p>
    * It differs from a skill scroll, by the fact that this item is directly learnable, while a skill scroll is not; and
    * a scroll is usable for its skill, while a book is not.
    * @see ItemType
@@ -73,7 +73,7 @@ public enum ItemType {
   /**
    * A consumable skill-scroll. This item is essentially a stored skill instance that can be used by almost anyone that
    * has it in inventory.
-   * <p/>
+   * <p>
    * It differs from a skill book, by the fact that this item is not directly learnable; where a skill book is learned,
    * but not directly usable from the book.
    * @see ItemType
@@ -277,4 +277,8 @@ public enum ItemType {
 
   private ItemType() {
   }
+
+  //TODO: Would this be better as an object array in PlatformItems, or left as an enumeration?
+  // If switching to an array of ItemType objects, we could allow expansion of the item types, without having to extend
+  // this enumeration quite so unnecessarily....
 }

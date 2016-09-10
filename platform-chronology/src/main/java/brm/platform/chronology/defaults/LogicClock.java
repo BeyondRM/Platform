@@ -6,16 +6,16 @@ import java.io.IOException;
 
 
 /**
- * <h2>LogicClock</h2>
+ * The clock logic.
  * @author Gregory
  */
 class LogicClock extends Crypto {
 
   @Override
-  public void performDecryption(DataInputStream dis) throws IOException {
+  public synchronized final void performDecryption(DataInputStream dis) throws IOException {
   }
 
   @Override
-  public void performEncryption(DataOutputStream dos) throws IOException {
+  public synchronized final void performEncryption(DataOutputStream dos) throws IOException {
   }
 }

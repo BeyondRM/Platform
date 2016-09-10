@@ -39,18 +39,18 @@ abstract public class AModuleLoading {
    * For the most part, as mentioned in the class javadoc, many of the files will actually be instances of binary data,
    * parsed as pictures, so that we can convert each pixel's red-green-blue-alpha values into byte-based characters and
    * into the destination values.
-   * @see AModuleLoading
+   * @see Loadable
    */
   protected File sourcePath = null;
   /**
    * Whether data is loaded. This might be set in the initialization before, during, or finish phases.
-   * @see AModuleLoading
+   * @see Loadable
    * @see #isDataLoaded() isDataLoaded()
    */
   protected boolean dataLoaded = false;
   /**
    * Whether data is validated.
-   * @see AModuleLoading
+   * @see Loadable
    * @see #isDataValidated() isDataValidated()
    */
   protected boolean dataValidated = false;
@@ -58,7 +58,7 @@ abstract public class AModuleLoading {
    * The collection size. This is for holding the count of objects that will be iterated through.
    * <p/>
    * This value is used within initialization, but likely not needed thereafter.
-   * @see AModuleLoading
+   * @see Loadable
    * @see #initializeBefore(ProgressBar) initializeBefore(ProgressBar)
    * @see #initializeDuring(ProgressBar) initializeDuring(ProgressBar)
    * @see #initializeFinish(ProgressBar) initializeFinish(ProgressBar)
@@ -68,7 +68,7 @@ abstract public class AModuleLoading {
   /**
    * Whether data is loaded. This determines if the platform module is considered "stable" for use in a game.
    * @return A {@link Boolean} condition.
-   * @see AModuleLoading
+   * @see Loadable
    * @see #dataLoaded dataLoaded
    */
   abstract public boolean isDataLoaded();
@@ -76,7 +76,7 @@ abstract public class AModuleLoading {
   /**
    * Whether data is validated.
    * @return A {@link Boolean} condition.
-   * @see AModuleLoading
+   * @see Loadable
    * @see #dataValidated dataValidated
    */
   abstract public boolean isDataValidated();
@@ -91,7 +91,7 @@ abstract public class AModuleLoading {
    * </pre>
    *
    * @return An {@link Integer} value.
-   * @see AModuleLoading
+   * @see Loadable
    * @see #initializedCount initializedCount
    */
   abstract public int getInitializedCount();
@@ -104,7 +104,7 @@ abstract public class AModuleLoading {
    * @param l A {@link Long} value, representing the cryptological initialization value.
    * @param f A {@link File} object, representing the base path to use.
    * @param s A {@link String} object, representing the cryptological key value.
-   * @see AModuleLoading
+   * @see Loadable
    */
   abstract public void beforeInitialization(long l, File f, String s);
 
@@ -123,7 +123,7 @@ abstract public class AModuleLoading {
    * step, we call {@link #initializeDuring(ProgressBar) initializeDuring(ProgressBar)} to perform any remaining tasks
    * necessary.
    * @param pb A {@link ProgressBar} object, representing an updating progress bar.
-   * @see AModuleLoading
+   * @see Loadable
    * @see #initializedCount initializedCount
    * @see #initializeDuring(ProgressBar) initializeDuring(ProgressBar)
    */
@@ -153,7 +153,7 @@ abstract public class AModuleLoading {
    * step, we call {@link #initializeFinish(ProgressBar) initializeFinish(ProgressBar)} to perform any remaining tasks
    * necessary.
    * @param pb A {@link ProgressBar} object, representing an updating progress bar.
-   * @see AModuleLoading
+   * @see Loadable
    * @see #initializedCount initializedCount
    * @see #initializeFinish(ProgressBar) initializeFinish(ProgressBar)
    */
@@ -174,7 +174,7 @@ abstract public class AModuleLoading {
    * is going to the title screen and handling any menu selection; battle tests go straight into the initialized battle
    * scene.
    * @param pb A {@link ProgressBar} object, representing an updating progress bar.
-   * @see AModuleLoading
+   * @see Loadable
    * @see #initializedCount initializedCount
    */
   abstract public void initializeFinish(ProgressBar pb);
@@ -184,7 +184,7 @@ abstract public class AModuleLoading {
    * <p/>
    * "Validation" may be dependent upon the module instance, and intent of loading; but, for most reasons, a validation
    * method will attempt to ensure that the object is present and usable, and its object members can be also validated.
-   * @see AModuleLoading
+   * @see Loadable
    */
   abstract public void validation();
 }
