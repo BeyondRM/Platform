@@ -5,10 +5,6 @@ A listing of changes to the project.
 
   - Added a 'platform-resource-graphics' module project with assorted handler classes, which provide a structure for a project's
       graphical assets.
-  - Added a 'platform-database-mappables' module for defining the game maps and their default values. (The engine infrastructure will
-      also have its own maps, for utilizing active map data.)
-  - Bumping Gradle dependency to version '2.7'
-  - Bumping modules to version '0.2'
 
 
 0.1 -- anything before 2015/09/14.

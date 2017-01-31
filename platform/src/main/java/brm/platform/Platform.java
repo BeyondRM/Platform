@@ -2,11 +2,11 @@ package brm.platform;
 import brm.platform.architecture.loadable.Loadable;
 import brm.platform.architecture.loadable.progress.ProgressBar;
 import brm.platform.attributes.PlatformAttributes;
-import brm.platform.chronology.PlatformChronology;
-import brm.platform.graphics.PlatformGraphics;
+import brm.platform.database.chronology.PlatformChronology;
+import brm.platform.database.mappables.PlatformMaps;
 import brm.platform.items.PlatformItems;
-import brm.platform.maps.PlatformMaps;
 import brm.platform.races.PlatformRaces;
+import brm.platform.resource.graphics.PlatformGraphics;
 import brm.platform.sound.PlatformSound;
 import brm.platform.system.PlatformSystem;
 import brm.platform.vocabulary.PlatformVocabulary;
@@ -15,6 +15,8 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+
+
 //import brm.platform.characters.PlatformCharacters;
 //import brm.platform.classes.PlatformClasses;
 //import brm.platform.conditions.PlatformConditions;
