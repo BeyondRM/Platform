@@ -6,12 +6,12 @@ include\
 ':platform-database-chronology',\
 ':platform-database-events',\
 ':platform-database-mappables',\
+':platform-database-races',\
 ':platform-database-vehicles',\
 ':platform-gamedata-attributes',\
 ':platform-resource-graphics',\
 ':platform-items',\
 ':platform-media-sounds',\
-':platform-races',\
 ':platform-system',\
 ':platform-vocabulary-i18n',\
 ':platform-window-controls'
