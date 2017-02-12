@@ -1,5 +1,0 @@
-//
-dependencies {
-  compile project(':platform-architecture')
-  //compile project(':platform-screenui')
-}
